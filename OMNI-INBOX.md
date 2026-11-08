@@ -5,4 +5,4 @@
 - [x] Badge-Logik und CSS für Demo/Live-Trennung im Dashboard integriert.
 
 - [x] 2026-11-08 12:00:00 [Option A] Configure @dirkb_bot
-- [in-progress] 2026-11-08 12:00:00 [Option B] Use local folder E:\AI-System 3.0\07_Recherche\Telegram-Medien
+- [x] 2026-11-08 12:00:00 [Option B] Use local folder E:\AI-System 3.0\07_Recherche\Telegram-Medien – fertig, Medien sammeln
