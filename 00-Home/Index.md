@@ -37,7 +37,10 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 - [[05_Fehler/FEHLER-2026-11-07_multi-chat-fatale-fehler|Fehler: Fatale Multi-Chat-Fehler (Verbindung, Sprache, Kontext)]]
 - [[04_Learnings/|Learnings – Bewährte Lösungen]]
 - [[04_Learnings/CodeGuardianAudit/CodeGuardianAudit-2026-11-08|Code Guardian Audit 2026-11-08 – 22/22 SUCCESS]]
+- [[04_Learnings/LEARNING-2026-11-09_ruflo-Bewertung|Bewertung: ruvnet/ruflo – Agent-Harness (Empfehlung: keine direkte Integration)]]
 - [[05_Fehler/FEHLER-2026-11-08_orchestrator-bridge|Orchestrator-Bridge implementiert]]
+- [[05_Fehler/FEHLER-2026-11_09_econnreset-socket-reset|Fehler: ECONNRESET – Socket-Verbindung geschlossen (Retry „Versuch 10“)]]
+- [[05_Fehler/FEHLER-2026-11_09_opencode-credentials-cooling-down|Fehler: OpenCode – „All credentials for model auto are cooling down“ (Retry „Versuch 3“ in 66 s)]]
 - [[Projekte/ORCHESTRATOR-DAEMON|Orchestrator-Daemon – Vollautomatische Task-Pipeline (Health-Check, Retry/Fallback, Eskalation)]]
 - [[04_Learnings/SocialMediaAutomation/tiktok_monetization_concept|TikTok-Monetarisierungskonzept (Basis 19 Analyse-Beispiele)]]
 
