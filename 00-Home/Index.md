@@ -2,7 +2,7 @@
 aliases: [home, start]
 tags: [MOC]
 created: 2026-09-15
-updated: 2026-11-08 (Index erweitert)
+updated: 2026-11-10 (Ollama bad-manifest-Fehler-Note ergänzt)
 ---
 
 # Second Brain – AI-System 4.0
@@ -31,16 +31,34 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 - [[01_Projekte/|Projekte – 14 migrierte Dossiers]]
 - [[Projekte/STATUS-AKTUELL-2026-11-07|Status: Aktueller Arbeitsstand (Memory)]]
 
-### Fehler & Learnings
+### Fehler
+
+- [ ] FEHLER-2026-11-10_telegram-getupdates-duplikat-poller.md
+- [ ] FEHLER-2026-11-10_omniroute-eventloop-stall-econnreset.md
+- [ ] FEHLER-2026-11-10_ollama-bad-manifest-leerzeichen-pfad.md
+- [ ] FEHLER-2026-11-10_watchdog-task-deaktiviert.md
+- [ ] FEHLER-2026-11-09_econnreset-socket-reset.md
+- [ ] FEHLER-2026-11-09_opencode-credentials-cooling-down.md
+- [ ] FEHLER-2026-11-08_orchestrator-bridge.md
+- [ ] FEHLER-2026-11-07_Telegram-Queue-Fixes.md
+- [ ] FEHLER-2026-11-07_multi-chat-fatale-fehler.md
+- [ ] FEHLER-2026-10-27_watchdog-terminalfenster.md
+
+### Altlasten & Learnings
 - [[05_Fehler/|Fehlerprotokolle]]
 - [[05_Fehler/SEC-REVIEW-2026-11-06_ECC-Import|Security-Review: ECC-Import]]
 - [[05_Fehler/FEHLER-2026-11-07_multi-chat-fatale-fehler|Fehler: Fatale Multi-Chat-Fehler (Verbindung, Sprache, Kontext)]]
+- [[05_Fehler/FEHLER-2026-11-10_omniroute-eventloop-stall-econnreset|Fehler: OmniRoute Event-Loop-Stall → ECONNRESET bei opencode]]
+- [[05_Fehler/FEHLER-2026-11-10_ollama-bad-manifest-leerzeichen-pfad|Fehler: Ollama bad manifest – Leerzeichen im Modell-Pfad → OmniRoute ohne Ollama]]
+- [[05_Fehler/FEHLER-2026-11-10_watchdog-task-deaktiviert|Fehler: Watchdog deaktiviert + Get-NetTCPConnection kaputt → Selbstheilung tot]]
 - [[04_Learnings/|Learnings – Bewährte Lösungen]]
 - [[04_Learnings/CodeGuardianAudit/CodeGuardianAudit-2026-11-08|Code Guardian Audit 2026-11-08 – 22/22 SUCCESS]]
-- [[04_Learnings/LEARNING-2026-11-09_ruflo-Bewertung|Bewertung: ruvnet/ruflo – Agent-Harness (Empfehlung: keine direkte Integration)]]
+- [[04_Learnings/LEARNING-2026-11-09_ruflo-Bewertung|Bewertung: ruvnet/ruflo - Agent-Harness (Empfehlung: keine direkte Integration)]]
+- [[04_Learnings/LEARNING-2026-11-10_omniroute-troubleshooting-playbook|OmniRoute Troubleshooting-Playbook (Dienste, Ports, Watchdogs, Diagnose, Reparatur)]]
 - [[05_Fehler/FEHLER-2026-11-08_orchestrator-bridge|Orchestrator-Bridge implementiert]]
 - [[05_Fehler/FEHLER-2026-11_09_econnreset-socket-reset|Fehler: ECONNRESET – Socket-Verbindung geschlossen (Retry „Versuch 10“)]]
 - [[05_Fehler/FEHLER-2026-11_09_opencode-credentials-cooling-down|Fehler: OpenCode – „All credentials for model auto are cooling down“ (Retry „Versuch 3“ in 66 s)]]
+- [[05_Fehler/FEHLER-2026-11-10_telegram-getupdates-duplikat-poller|Telegram-409: Duplikat-Poller (Bridge vs. AI-System v4)]]
 - [[Projekte/ORCHESTRATOR-DAEMON|Orchestrator-Daemon – Vollautomatische Task-Pipeline (Health-Check, Retry/Fallback, Eskalation)]]
 - [[04_Learnings/SocialMediaAutomation/tiktok_monetization_concept|TikTok-Monetarisierungskonzept (Basis 19 Analyse-Beispiele)]]
 
@@ -81,3 +99,5 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 ## Letztes Update
 
 2026-11-08 — Orchestrator-Daemon: Provider-Health-Check, Retry/Fallback, Eskalations-Logik und Vault-Persistenz implementiert. `py_compile` Smoke-Test erfolgreich. Projekt-Note `Projekte/ORCHESTRATOR-DAEMON.md` angelegt.
+
+2026-11-10 — Telegram-/status Feature abgeschlossen; Telegram-409-Doppelpoller behoben (Messenger-Bridge gestoppt, AI-System v4 alleiniger Poller); Fehler-Note `05_Fehler/FEHLER-2026-11-10_telegram-getupdates-duplikat-poller.md` angelegt.
