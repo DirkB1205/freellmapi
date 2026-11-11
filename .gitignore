@@ -25,3 +25,12 @@ update-hermes.sh
 
 # Monetization planning — private, never committed
 monetization/
+
+# Root scratch scripts (ad-hoc DB inspection / API checks — not part of the
+# build surface; they dump SQLite state at import time under --doctest-modules).
+check_api.py
+inspect_db*.py
+mini_beispiel.py
+remove_duplicates.py
+run_check.py
+tmp_inspect_db.py

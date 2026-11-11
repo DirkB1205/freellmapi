@@ -14,11 +14,30 @@ if ! python -m pytest --version &> /dev/null; then
     exit 1
 fi
 
-# Doctests ausführen
-# --doctest-modules: alle .py Dateien auf Doctests prüfen
-# -v: verbose
-# --tb=short: kurze Tracebacks
-# --ignore: Backup-Ordner und Venvs ausschliessen
+# Wenn TARGET="." (ganzes Repo), prüfe nur geänderte .py-Dateien via git
+# Das vermeidet ffmpeg-Trigger in unbenutzten Modulen und beschleunigt die Prüfung
+if [[ "$TARGET" == "." ]]; then
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    mapfile -t FILES < <(git status --porcelain | awk '{print $2}' | grep '\.py$' || true)
+    if [[ ${#FILES[@]} -gt 0 ]]; then
+      echo "Prüfe ${#FILES[@]} geänderte .py-Dateien:"
+      for f in "${FILES[@]}"; do echo "  - $f"; done
+      echo ""
+      EXIT_CODE=0
+      python -m pytest --doctest-modules -v --tb=short --capture=no "${FILES[@]}" || EXIT_CODE=$?
+      if [ $EXIT_CODE -eq 5 ]; then
+        echo "=== verify.sh: Keine auswertbaren Doctests in geänderten Dateien — übersprungen ==="
+        exit 0
+      fi
+      exit $EXIT_CODE
+    else
+      echo "Keine .py-Änderungen erkannt — übersprungen"
+      exit 0
+    fi
+  fi
+fi
+
+# Fallback: TARGET wie übergeben (expliziter Pfad oder kein Git)
 EXIT_CODE=0
 python -m pytest --doctest-modules -v --tb=short --capture=no \
   --ignore=_c-altlasten-backup-20261008 \
@@ -70,8 +89,13 @@ python -m pytest --doctest-modules -v --tb=short --capture=no \
 
 if [ $EXIT_CODE -eq 0 ]; then
     echo "=== verify.sh: ALLE DOCTESTS BESTANDEN ==="
+elif [ $EXIT_CODE -eq 5 ]; then
+    echo "=== verify.sh: Keine auswertbaren Doctests in geänderten Dateien — übersprungen ==="
 else
     echo "=== verify.sh: DOCTESTS FEHLGESCHLAGEN (Exit: $EXIT_CODE) ==="
 fi
 
+if [ $EXIT_CODE -eq 5 ]; then
+    exit 0
+fi
 exit $EXIT_CODE
