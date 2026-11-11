@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiFetch } from '@/lib/api'
 import { Button } from '@/components/ui/button'
@@ -39,16 +39,21 @@ export function AnthropicSection() {
     queryFn: () => apiFetch('/api/fallback'),
   })
 
-  const [draft, setDraft] = useState<AnthropicMap | null>(null)
-  useEffect(() => { if (mapData?.map) setDraft(mapData.map) }, [mapData])
+  // Derived from the server map; `editedDraft` holds in-progress edits so the
+  // input stays controlled without syncing state inside an effect.
+  const [editedDraft, setEditedDraft] = useState<AnthropicMap | null>(null)
+  const draft = editedDraft ?? mapData?.map ?? null
 
   const save = useMutation({
     mutationFn: (map: AnthropicMap) => apiFetch('/api/settings/anthropic-map', { method: 'PUT', body: JSON.stringify(map) }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['anthropic-map'] }),
+    onSuccess: () => {
+      setEditedDraft(null)
+      queryClient.invalidateQueries({ queryKey: ['anthropic-map'] })
+    },
   })
 
   // Dedup catalog models by id; only enabled models can be pinned.
-  const modelOptions = Array.from(new Map(models.filter(m => m.enabled).map(m => [m.modelId, m])).values())
+  const modelOptions = Array.from(new Map<string, MappableModel>(models.filter(m => m.enabled).map(m => [m.modelId, m])).values())
     .sort((a, b) => a.displayName.localeCompare(b.displayName))
   const dirty = !!(draft && mapData?.map && JSON.stringify(draft) !== JSON.stringify(mapData.map))
 
@@ -77,7 +82,10 @@ export function AnthropicSection() {
             <span className="w-40 text-xs font-medium shrink-0">{t(labelKey)}</span>
             <Select
               value={draft?.[key] ?? 'auto'}
-              onValueChange={(v) => setDraft(d => (d ? { ...d, [key]: v } : d))}
+              onValueChange={(v) => setEditedDraft(d => {
+                const base = d ?? mapData?.map
+                return base ? { ...base, [key]: v } : null
+              })}
             >
               <SelectTrigger className="w-[320px] max-w-full"><SelectValue /></SelectTrigger>
               <SelectContent>

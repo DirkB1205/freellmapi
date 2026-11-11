@@ -590,7 +590,7 @@ export default function AnalyticsPage() {
   // Friendly display name per providerId: catalog → the platform id, custom →
   // the endpoint host. Used by the filter dropdown so a selected custom relay
   // shows 'relay.example.com', not 'custom:https://relay.example.com' (#889).
-  const providerDisplay = new Map(byPlatform.map((p) => [p.providerId, p.endpoint ?? p.platform]))
+  const providerDisplay = new Map<string, string>(byPlatform.map((p) => [p.providerId, p.endpoint ?? p.platform]))
 
   const { data: byClient = [] } = useQuery({
     queryKey: ['analytics', 'by-client', range],

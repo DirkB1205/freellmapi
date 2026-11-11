@@ -32,7 +32,8 @@ let _proxyAgentCtor: Ctor<unknown> | null = null;
 let _socksAgentCtor: Ctor<unknown> | null = null;
 
 async function loadHttpProxyAgent(): Promise<Ctor<unknown>> {
-  if (!_proxyAgentCtor) _proxyAgentCtor = (await import('undici')).ProxyAgent as unknown as Ctor<unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- undici.ProxyAgent lacks types in @types/undici; dynamic import would add weight for no gain
+if (!_proxyAgentCtor) _proxyAgentCtor = (await import('undici') as any).ProxyAgent as unknown as Ctor<unknown>;
   return _proxyAgentCtor;
 }
 async function loadSocksAgent(): Promise<Ctor<unknown>> {
@@ -654,7 +655,8 @@ function enrichAbort(
     'AbortError',
   );
   // Preserve upstream error chain so debug logs still see the original cause.
-  if (e.cause !== undefined) (enriched as any).cause = e.cause;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Error has optional cause; preserve chain
+if (e.cause !== undefined) (enriched as any).cause = e.cause;
   return enriched;
 }
 

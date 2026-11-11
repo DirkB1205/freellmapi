@@ -90,6 +90,7 @@ export default function FusionPage() {
   )
 
   // Hydrate local state from the server once it loads.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (!data) return
     setMode(data.config.mode)
@@ -99,6 +100,7 @@ export default function FusionPage() {
     setStrategy(data.config.strategy)
     setExposePanel(data.config.expose_panel)
   }, [data])
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const maxK = data?.maxK ?? 8
 

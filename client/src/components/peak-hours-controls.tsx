@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useI18n } from '@/i18n'
 import { Tooltip } from '@/components/tooltip'
 import { PEAK_EXEMPT_STRATEGIES, type RoutingData, type RoutingStrategy } from '@/lib/routing'
@@ -34,7 +34,18 @@ export interface PeakHoursPatch {
  * is one checkbox and nothing else; the window inputs appear only once someone
  * turns it on.
  */
-export function PeakHoursControls({ routing, strategy, saving, onSave }: {
+export function PeakHoursControls(props: {
+  routing: RoutingData
+  strategy: RoutingStrategy
+  saving: boolean
+  onSave: (patch: PeakHoursPatch) => void
+}) {
+  // Keyed by the server timezone so the inner state re-initialises when it
+  // changes (poll / another tab) without syncing state inside an effect.
+  return <PeakHoursControlsInner key={props.routing.peakTimezone} {...props} />
+}
+
+function PeakHoursControlsInner({ routing, strategy, saving, onSave }: {
   routing: RoutingData
   strategy: RoutingStrategy
   saving: boolean
@@ -43,9 +54,6 @@ export function PeakHoursControls({ routing, strategy, saving, onSave }: {
   const { t } = useI18n()
   const [tz, setTz] = useState(routing.peakTimezone)
   const [tzError, setTzError] = useState(false)
-
-  // Re-sync when the server's value changes under us (poll, or another tab).
-  useEffect(() => { setTz(routing.peakTimezone); setTzError(false) }, [routing.peakTimezone])
 
   const enabled = routing.peakHoursAdjust
   const exempt = PEAK_EXEMPT_STRATEGIES.includes(strategy)

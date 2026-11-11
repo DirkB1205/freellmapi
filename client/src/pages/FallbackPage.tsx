@@ -28,6 +28,7 @@ import {
   type FallbackEntry,
   type ModelGroupRow,
   type RateLimitUsageData,
+  type RateLimitUsageRow,
   type RoutingData,
   type RoutingStrategy,
   type RoutingWeights,
@@ -103,7 +104,7 @@ export default function FallbackPage() {
   // Staged edits carry the chain they were made against, so switching chains
   // in the manager below discards them instead of letting one chain's unsaved
   // rows be saved into another (#1021).
-  const [staged, setStaged] = useState<{ profileId: number | null; entries: FallbackEntry[] } | null>(null)
+  const [rawStaged, setRawStaged] = useState<{ profileId: number | null; entries: FallbackEntry[] } | null>(null)
   const [optionsCollapsed, setOptionsCollapsed] = useState(readOptionsCollapsed)
 
   // Catalog search + filter state (#343).
@@ -123,6 +124,10 @@ export default function FallbackPage() {
   })
   const activeProfileId = active?.activeProfileId ?? null
 
+  // Discard staged edits when the active chain changes (#1047), derived instead
+  // of syncing state inside an effect.
+  const staged = rawStaged && rawStaged.profileId !== activeProfileId ? null : rawStaged
+
   const { data: entries = [], isLoading: entriesLoading } = useQuery<FallbackEntry[]>({
     queryKey: ['fallback', 'chain', activeProfileId],
     // The chain id rides in the request itself (#1047): keyed-but-unpinned, a
@@ -137,13 +142,11 @@ export default function FallbackPage() {
   // Staged edits are DISCARDED when the active chain changes, not just hidden
   // (#1047): merely masking them meant switching A→B→A resurrected A's stale
   // unsaved rows over freshly fetched data, with only a refresh clearing them.
-  useEffect(() => {
-    setStaged(prev => (prev && prev.profileId !== activeProfileId ? null : prev))
-  }, [activeProfileId])
+  // (Handled via the derived `staged` above.)
 
   const localEntries = staged && staged.profileId === activeProfileId ? staged.entries : null
   const setLocalEntries = (entries: FallbackEntry[] | null) =>
-    setStaged(entries === null ? null : { profileId: activeProfileId, entries })
+    setRawStaged(entries === null ? null : { profileId: activeProfileId, entries })
 
   const { data: tokenUsage } = useQuery<TokenUsageData>({
     queryKey: ['fallback', 'token-usage'],
@@ -165,7 +168,7 @@ export default function FallbackPage() {
     refetchInterval: 15_000,
   })
   const rateUsageByModel = useMemo(
-    () => new Map((rateLimitUsage?.rows ?? []).map(r => [r.modelDbId, r])),
+    () => new Map<number, RateLimitUsageRow>((rateLimitUsage?.rows ?? []).map(r => [r.modelDbId, r])),
     [rateLimitUsage],
   )
 

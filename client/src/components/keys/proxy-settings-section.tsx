@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiFetch } from '@/lib/api'
 import { Button } from '@/components/ui/button'
@@ -30,8 +30,10 @@ function hostOf(url: string): string {
 export function ProxySettingsSection() {
   const { t } = useI18n()
   const queryClient = useQueryClient()
-  const [proxyUrl, setProxyUrl] = useState('')
-  const [proxyMode, setProxyMode] = useState<ProxyMode>('forward')
+  // Derived from the server value; `edited*` holds in-progress edits so the
+  // input stays controlled without syncing state inside an effect.
+  const [editedProxyUrl, setEditedProxyUrl] = useState<string | null>(null)
+  const [editedProxyMode, setEditedProxyMode] = useState<ProxyMode | null>(null)
   const [fetchRelayToken, setFetchRelayToken] = useState('')
   const [fetchRelayTokenChanged, setFetchRelayTokenChanged] = useState(false)
 
@@ -39,6 +41,9 @@ export function ProxySettingsSection() {
     queryKey: ['proxy-url'],
     queryFn: () => apiFetch('/api/settings/proxy'),
   })
+
+  const proxyUrl = editedProxyUrl ?? data?.proxyUrl ?? ''
+  const proxyMode = editedProxyMode ?? data?.proxyMode ?? 'forward'
 
   // #825: the per-platform route-via-proxy switch used to live only inside the
   // group dropdown on the Providers tab (two clicks per platform, no bulk, and
@@ -51,14 +56,7 @@ export function ProxySettingsSection() {
     queryFn: () => apiFetch('/api/keys'),
   })
 
-  // Sync from server when the query refetches; keep the user's typed value
-  // in between (controlled input).
-  useEffect(() => {
-    if (data) {
-      setProxyUrl(data.proxyUrl)
-      setProxyMode(data.proxyMode)
-    }
-  }, [data?.proxyUrl, data?.proxyMode])
+  // (Sync from server now happens via the derived `proxyUrl`/`proxyMode` above.)
 
   const saveProxy = useMutation({
     meta: { silenceToast: true },
@@ -66,8 +64,8 @@ export function ProxySettingsSection() {
       apiFetch<ProxySettings>('/api/settings/proxy', { method: 'PUT', body: JSON.stringify(body) }),
     onSuccess: (result: ProxySettings) => {
       queryClient.invalidateQueries({ queryKey: ['proxy-url'] })
-      setProxyUrl(result.proxyUrl)
-      setProxyMode(result.proxyMode)
+      setEditedProxyUrl(result.proxyUrl)
+      setEditedProxyMode(result.proxyMode)
       setFetchRelayToken('')
       setFetchRelayTokenChanged(false)
     },
@@ -141,7 +139,7 @@ export function ProxySettingsSection() {
         <form onSubmit={submit} className="flex flex-wrap items-end gap-3">
           <div className="space-y-1.5">
             <Label className="text-xs">{t('keys.proxyMode')}</Label>
-            <Select value={proxyMode} onValueChange={value => setProxyMode(value as ProxyMode)}>
+            <Select value={proxyMode} onValueChange={value => setEditedProxyMode(value as ProxyMode)}>
               <SelectTrigger className="w-[160px]"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="forward" label={t('keys.proxyModeForward')}>{t('keys.proxyModeForward')}</SelectItem>
@@ -153,7 +151,7 @@ export function ProxySettingsSection() {
             <Label className="text-xs">{t('keys.proxyUrl')}</Label>
             <Input
               value={proxyUrl}
-              onChange={e => setProxyUrl(e.target.value)}
+              onChange={e => setEditedProxyUrl(e.target.value)}
               placeholder={proxyMode === 'fetch-relay' ? 'https://relay.example.workers.dev' : 'socks5://127.0.0.1:1080'}
               className="font-mono text-xs"
             />

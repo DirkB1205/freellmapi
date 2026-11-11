@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import type { ApiKeyModel, Platform, ProviderQuotaState } from '../../../../shared/types'
 import { ExternalLink } from 'lucide-react'
 import { useI18n } from '@/i18n'

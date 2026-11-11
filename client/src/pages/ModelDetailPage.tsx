@@ -27,6 +27,7 @@ import {
   splitsWithoutMember,
   type FallbackEntry,
   type RateLimitUsageData,
+  type RateLimitUsageRow,
   type RoutingData,
   type Row,
 } from '@/lib/routing'
@@ -87,7 +88,7 @@ export default function ModelDetailPage() {
     refetchInterval: 15_000,
   })
   const rateUsageByModel = useMemo(
-    () => new Map((rateLimitUsage?.rows ?? []).map(r => [r.modelDbId, r])),
+    () => new Map<number, RateLimitUsageRow>((rateLimitUsage?.rows ?? []).map(r => [r.modelDbId, r])),
     [rateLimitUsage],
   )
 
@@ -211,6 +212,7 @@ export default function ModelDetailPage() {
   // the full overrides list (see lib/alias-merge) — the visible rows are only
   // this group's slice, so editing by row position would hit other groups.
   const merges = useMemo(() => unify?.overrides.merges ?? [], [unify])
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const groupAliases = useMemo(() => aliasesFor(merges, label), [merges, label])
   const submitAlias = () => {
     if (!aliasInput.trim()) return
@@ -260,7 +262,7 @@ export default function ModelDetailPage() {
               </span>
               <span className="text-[11px] rounded-full px-2 py-0.5 bg-muted text-muted-foreground">{t('models.providerCount', { count: members.length })}</span>
               {quota && <span title={quota.title} className="text-[11px] rounded-full px-2 py-0.5 bg-muted text-muted-foreground tabular-nums">{quota.text}</span>}
-              <RateLimitBadge size="md" rows={members.flatMap(m => rateUsageByModel.get(m.modelDbId) ?? [])} />
+              <RateLimitBadge size="md" rows={members.map(m => rateUsageByModel.get(m.modelDbId)).filter((r): r is RateLimitUsageRow => r !== undefined)} />
               {vision && <span title={t('models.visionTitle')} className="text-[11px] rounded-full px-2 py-0.5 bg-cyan-600/15 text-cyan-700 dark:bg-cyan-400/15 dark:text-cyan-400">{t('models.vision')}</span>}
               {tools && <span title={t('models.toolsTitle')} className="text-[11px] rounded-full px-2 py-0.5 bg-violet-600/15 text-violet-700 dark:bg-violet-400/15 dark:text-violet-400">{t('models.tools')}</span>}
             </div>
@@ -411,6 +413,7 @@ function ProviderSettingsRow({
     tpmLimit, tpdLimit, supportsVision, supportsTools, enabled])
 
   const [form, setForm] = useState(() => modelSettingsForm(source))
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setForm(modelSettingsForm(source)), [modelDbId, source])
   const setField = <K extends keyof typeof form>(key: K, value: typeof form[K]) =>
     setForm(current => ({ ...current, [key]: value }))

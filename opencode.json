@@ -6,17 +6,60 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "FreeLLMAPI (local)",
       "options": {
-        "baseURL": "http://127.0.0.1:3001/v1"
+        "baseURL": "http://127.0.0.1:3001/v1",
+        "apiKey": "freellmapi-2d84a560a6594868d65541eb798ef4b063999ddf9eb73bc7"
       },
       "models": {
         "auto": {
           "name": "FreeLLMAPI Auto Router",
           "limit": {
-            "context": 1048576,
+            "context": 28000,
             "output": 65536
           }
         }
       }
+    },
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "{env:OMNIROUTE_API_KEY}"
+      },
+      "models": {
+        "lm-studio/auto": {
+          "name": "lm-studio/auto (FreeLLMAPI auto via OmniRoute)",
+          "limit": {
+            "context": 65536,
+            "output": 16384
+          }
+        },
+        "main-chain": {
+          "name": "main-chain",
+          "limit": {
+            "context": 65536,
+            "output": 16384
+          }
+        }
+      }
     }
-  }
+  },
+  "tools": {
+    "bash": true,
+    "write": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "webfetch": true,
+    "websearch": true,
+    "skill": true,
+    "question": true,
+    "browser": true,
+    "subagent": true,
+    "lsp": true
+  },
+  "instructions": [
+    "00_Dashboard/Guidelines.md"
+  ]
 }
+

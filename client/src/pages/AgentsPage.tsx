@@ -63,6 +63,9 @@ function masked(value: string): string {
   return `${value.slice(0, 8)}${'•'.repeat(12)}${value.slice(-4)}`
 }
 
+// Computed once at module load so the render stays pure (React Compiler).
+const AGENTS_SEEN_CUTOFF_MS = Date.now() - 7 * 24 * 60 * 60 * 1000
+
 export default function AgentsPage() {
   const { t } = useI18n()
   const [revealKey, setRevealKey] = useState(false)
@@ -76,8 +79,8 @@ export default function AgentsPage() {
   })
   // "Seen recently" means traffic within the last 7 days, not merely any row
   // in the fetched 30-day window.
-  const seenCutoff = Date.now() - 7 * 24 * 60 * 60 * 1000
-  const seen = new Map(byClient
+  const seenCutoff = AGENTS_SEEN_CUTOFF_MS
+  const seen = new Map<string, (typeof byClient)[number]>(byClient
     .filter(row => row.lastSeenAt && Date.parse(row.lastSeenAt) >= seenCutoff)
     .map(row => [row.clientAgent, row]))
   const origin = import.meta.env.DEV

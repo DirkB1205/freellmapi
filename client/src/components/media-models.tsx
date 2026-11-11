@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { AudioLines, Clapperboard, Image as ImageIcon, Mic } from 'lucide-react'

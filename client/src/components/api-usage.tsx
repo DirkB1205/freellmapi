@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { CopyButton } from '@/components/copy-button'
 import { useI18n } from '@/i18n'
 

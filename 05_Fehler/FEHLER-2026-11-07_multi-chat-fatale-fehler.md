@@ -1,8 +1,8 @@
 ---
 tags: [fehler, multi-chat, verbindung, sprache, kontextverlust, fatal]
 created: 2026-11-07
-status: offen
-updated: 2026-11-07
+status: erledigt
+updated: 2026-11-11
 related: "[[00_Dashboard/Guidelines]] [[08_Workflows/omni-coordination]]"
 ---
 

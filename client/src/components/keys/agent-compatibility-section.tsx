@@ -109,7 +109,7 @@ export function AgentCompatibilitySection() {
     }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['url-tokens'] }),
   })
-  const options = Array.from(new Map(
+  const options = Array.from(new Map<string, MappableModel>(
     models.filter(model => model.enabled).map(model => [model.modelId, model]),
   ).values()).sort((a, b) => a.displayName.localeCompare(b.displayName))
   const mapDirty = !!mapDraft && !!mapData

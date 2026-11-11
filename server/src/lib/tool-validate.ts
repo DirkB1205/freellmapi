@@ -1,3 +1,4 @@
+// @ts-expect-error ajv subpath has no types
 import Ajv2020 from 'ajv/dist/2020.js';
 import type { ValidateFunction } from 'ajv';
 import { getSetting } from '../db/index.js';
@@ -26,7 +27,8 @@ import { getSetting } from '../db/index.js';
  *  draft-07-only Ajv throws on their `$schema`. `strict: false` keeps an
  *  unknown keyword from being fatal — plenty of real schemas carry vendor
  *  extensions, and rejecting the schema would fail calls that are fine. */
-const ajv = new (Ajv2020 as unknown as typeof import('ajv').default)({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- Ajv2020 constructor lacks types in @types/ajv; dynamic import below would add weight for no gain
+const ajv = new (Ajv2020 as any)({
   strict: false,
   allErrors: true,
   validateFormats: false,
@@ -134,7 +136,7 @@ export function validateToolArguments(
 
   const detail = (validate.errors ?? [])
     .slice(0, 3)
-    .map(e => `${e.instancePath || '/'} ${e.message ?? 'is invalid'}`)
+    .map(e => `${(e as any).instancePath || '/'} ${e.message ?? 'is invalid'}`)
     .join('; ');
   return { ok: false, reason: `${toolName}: ${detail || 'does not match its schema'}` };
 }

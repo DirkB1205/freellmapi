@@ -4,6 +4,40 @@ created: 2026-11-10 15:00
 bereich: OmniRoute / Infrastruktur
 updated: 2026-11-10
 status: gelöst
+
+## Finale Verifikation (10.11.2026 20:15)
+
+### Live-Prozess-Status
+- **OmniRoute Parent**: `omniroute.mjs serve --port 20128 --no-open`, **PID 20364**, gestartet 10.11.2026 17:20:15
+- **OmniRoute Child**: `server-ws.mjs`, **PID 33144**, gestartet 10.11.2026 17:20:16
+- **Parent**: `node.exe`, **PID 30104** (9router service), gestartet 10.11.2026 17:20:15
+
+### Bootstrap-Reihenfolge (über `start-omniroute.ps1`)
+1. Stelle sicher, dass `.env` geladen ist.
+2. Stoppe alle `omniroute.mjs`, `server-ws.mjs`, `node.exe` (9router) Prozesse.
+3. Starte `node E:\AI-System 3.0\code\omniroute-data\node_modules\omniroute\dist\bin\omniroute.mjs serve --port 20128 --no-open`.
+4. Logs → `omni-out.log` (console logging) und `omni-err.log` (errors).
+5. Warte auf "OmniRoute is running!" → Stop Pending → Menyatakan Opend auf Port 20128, 20131, 20132.
+6. Warte auf `/api/health` 200.
+7. Warte auf `/v1/chat/completions` 200 mit `model=auto`.
+
+### Bootstrap-Ergebnis
+- **omni-out.log**: `OmniRoute is running! (started in 10.2s)`
+- **omni-err.log**: Nur harmlose Warnungen zu `OMNIROUTE_API_KEY` und `DATA_DIR` Overrides.
+- **Health & API**: `/api/health` → 200; `/v1/chat/completions` mit `model=auto` → 200 (routed zu `lm-studio` / `ollama-local`).
+
+### Watchdog-Log-Verifikation (5-min Zyklus)
+- **19:35:08**: `OmniRoute ok`
+- **19:40:08**: `OmniRoute ok`
+- **omni-eternal-watchdog**: No-Op, keine Aktion
+
+### Scheduled Task States
+- **omni-eternal-watchdog**: State "Ready" (Task kann nicht deaktiviert/entfernt werden: Access denied / Zugriff verweigert), **harmlos** (Skript ist No-Op).
+- **omni-guardian**: State "Disabled" (erfolgreich deaktiviert).
+- **omni-watchdog**: State "Ready", 5-min Zyklus, funktioniert korrekt.
+
+### Fazit
+OmniRoute läuft stabil ohne Kill/Restart-Zyklus. Die beständige Deaktivierung/Tilgung des `omni-eternal-watchdog` Task ist nicht erforderlich, da sein Skript ein No-Op ist und Legitimate `omni-watchdog` erfolgreich verwendet.
 ---
 
 # FEHLER-2026-11-10: omni-watchdog deaktiviert + Get-NetTCPConnection kaputt → endlose ECONNRESET-Retrys

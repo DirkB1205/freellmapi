@@ -170,7 +170,7 @@ export default function EmbeddingsPage() {
     queryFn: () => apiFetch('/api/embeddings/usage'),
     refetchInterval: 30_000,
   })
-  const usageByFamily = new Map((usage?.families ?? []).map(u => [u.family, u]))
+  const usageByFamily = new Map<string, UsageData['families'][number]>((usage?.families ?? []).map(u => [u.family, u]))
 
   const saveMutation = useMutation({
     mutationFn: (body: { defaultFamily?: string; providers?: { id: number; priority: number; enabled: boolean }[] }) =>
@@ -224,12 +224,12 @@ export default function EmbeddingsPage() {
   function handleDragEnd(familyName: string, event: DragEndEvent) {
     const { active, over } = event
     if (!over || active.id === over.id) return
-    setLocalFamilies(families.map(f => {
+    setLocalFamilies(families.map((f: Family) => {
       if (f.family !== familyName) return f
       const oldIndex = f.providers.findIndex(p => p.id === active.id)
       const newIndex = f.providers.findIndex(p => p.id === over.id)
       if (oldIndex < 0 || newIndex < 0) return f
-      return { ...f, providers: arrayMove(f.providers, oldIndex, newIndex).map((p, i) => ({ ...p, priority: i + 1 })) }
+      return { ...f, providers: arrayMove(f.providers, oldIndex, newIndex).map((p: ProviderEntry, i: number) => ({ ...p, priority: i + 1 })) }
     }))
   }
 

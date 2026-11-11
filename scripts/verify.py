@@ -12,6 +12,24 @@ from pathlib import Path
 
 # Schritt 1: Geänderte .py-Dateien aus dem Git-Working-Tree ermitteln
 def get_changed_py_files(repo: Path) -> list[str]:
+    """
+    Return list of changed .py files from git status, excluding known problem files.
+
+    Args:
+        repo: Path to the repository root.
+
+    Returns:
+        List of relative file paths ending with .py.
+
+    Example:
+        >>> from pathlib import Path
+        >>> import tempfile
+        >>> with tempfile.TemporaryDirectory() as d:
+        ...     repo = Path(d)
+        ...     # No git repo -> empty list
+        ...     get_changed_py_files(repo)
+        []
+    """
     try:
         # Getrackte Änderungen + ungetrackte Dateien, aber ohne bekannte Problem-Dateien
         result = subprocess.run(
@@ -23,7 +41,7 @@ def get_changed_py_files(repo: Path) -> list[str]:
     files: list[str] = []
     exclude_prefixes = ("orch/", "code/orchestrator/", "open-webui-venv/", ".venv/", "venv/")
     # Explizit ausschließen: inspect_db*.py, check_api.py, check_providers.py (haben module-level Side-Effects)
-    exclude_files = ("inspect_db.py", "inspect_db2.py", "inspect_db3.py", "tmp_inspect_db.py", 
+    exclude_files = ("inspect_db.py", "inspect_db2.py", "inspect_db3.py", "tmp_inspect_db.py",
                      "check_api.py", "check_providers.py", "run_check.py", "remove_duplicates.py")
     for line in result.stdout.splitlines():
         path = line[3:].strip().strip('"')

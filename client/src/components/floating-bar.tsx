@@ -7,6 +7,7 @@ export function FloatingBar({ show, children }: { show: boolean; children: React
   const [render, setRender] = useState(show)
   useEffect(() => {
     if (show) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRender(true)
       return
     }
