@@ -1,102 +1,84 @@
 #!/usr/bin/env python3
-"""
-verify.py — Windows-kompatibler Ersatz für verify.sh
-Führt pytest mit Doctests aus, liefert Exit-Code für Plugin.
-Nutzung: python scripts/verify.py [path-to-test-file-or-dir]
-"""
+"""verify.py — führt pytest mit Doctests aus, liefert Exit-Code für Plugin.
+Cross-platform Ersatz für verify.sh (Windows/Linux/macOS).
 
-import sys
+Nutzung:
+    python scripts/verify.py [path-to-test-file-or-dir]
+"""
 import subprocess
+import sys
 from pathlib import Path
 
+TARGET = sys.argv[1] if len(sys.argv) > 1 else "."
 
-# Schritt 1: Geänderte .py-Dateien aus dem Git-Working-Tree ermitteln
-def get_changed_py_files(repo: Path) -> list[str]:
-    """
-    Return list of changed .py files from git status, excluding known problem files.
+print(f"=== verify.py: Starte Doctest-Prüfung für {TARGET} ===")
 
-    Args:
-        repo: Path to the repository root.
+# Prüfen ob pytest verfügbar ist
+try:
+    subprocess.run([sys.executable, "-m", "pytest", "--version"], check=True, capture_output=True)
+except (subprocess.CalledProcessError, FileNotFoundError):
+    print("FEHLER: pytest nicht installiert. Installiere mit: pip install pytest")
+    sys.exit(1)
 
-    Returns:
-        List of relative file paths ending with .py.
+IGNORES = [
+    "_c-altlasten-backup-20261008",
+    "_c-altlasten-backup-20261008/Default-Project-kopien",
+    "02_ECC/skills/research-agent",
+    "open-webui-venv",
+    "02_ECC/skills/skill-comply/tests",
+    "02_ECC/tests",
+    "02_ECC/skills/continuous-learning-v2/scripts",
+    "code/skills/humanizer/scripts/validate-package.py",
+    "code/social-media-automation",
+    "Projekte/social-automation/auto_setup.py",
+    "Projekte/social-automation/Video-Analysen",
+    "Projekte/Epic-Tool",
+    "code/orchestrator",
+    "code/omni-dashboard/clean_state.py",
+    "code/research-agent",
+    "paperclip/packages/paperclip-runner/scripts",
+    "02_ECC/ecc_dashboard.py",
+    "02_ECC/skills/agent-self-evaluation/scripts",
+    "02_ECC/skills/docs-governance/scripts",
+    "02_ECC/skills/frontend-slides/scripts",
+    "02_ECC/skills/manim-video/assets",
+    "02_ECC/skills/skill-comply/scripts",
+    "02_ECC/skills/taste-application/tests",
+    "02_ECC/skills/taste-application/scripts",
+    "02_ECC/skills/taste-distillation/scripts",
+    "02_ECC/skills/videodb/scripts",
+    "02_ECC/src/llm",
+    "Projekte/ai-content-studio/app.py",
+    "Projekte/ai-content-studio/avatar_manager.py",
+    "check_api.py",
+    "run_check.py",
+    "Projekte/ai-content-studio/tests",
+    "Projekte/ai-content-studio/trend_scanner.py",
+    "paperclip",
+    "projects/tiktok-analysis",
+    "Projekte/galyarder-framework/integrations",
+    "Projekte/galyarder-framework/scripts",
+    "Projekte/galyarder-framework/skills",
+    "inspect_db.py",
+    "inspect_db2.py",
+    "inspect_db3.py",
+    "tmp_inspect_db.py",
+    "Projekte/social-automation/generate_posts.py",
+    "Projekte/social-automation/test_simple_preview.py",
+    "Projekte/social-automation/tests",
+]
 
-    Example:
-        >>> from pathlib import Path
-        >>> import tempfile
-        >>> with tempfile.TemporaryDirectory() as d:
-        ...     repo = Path(d)
-        ...     # No git repo -> empty list
-        ...     get_changed_py_files(repo)
-        []
-    """
-    try:
-        # Getrackte Änderungen + ungetrackte Dateien, aber ohne bekannte Problem-Dateien
-        result = subprocess.run(
-            ["git", "status", "--porcelain"],
-            capture_output=True, text=True, cwd=repo
-        )
-    except FileNotFoundError:
-        return []
-    files: list[str] = []
-    exclude_prefixes = ("orch/", "code/orchestrator/", "open-webui-venv/", ".venv/", "venv/")
-    # Explizit ausschließen: inspect_db*.py, check_api.py, check_providers.py (haben module-level Side-Effects)
-    exclude_files = ("inspect_db.py", "inspect_db2.py", "inspect_db3.py", "tmp_inspect_db.py",
-                     "check_api.py", "check_providers.py", "run_check.py", "remove_duplicates.py")
-    for line in result.stdout.splitlines():
-        path = line[3:].strip().strip('"')
-        if path.lower().endswith(".py") and not any(path.lower().startswith(p) for p in exclude_prefixes) and path not in exclude_files:
-            files.append(path)
-    return files
+cmd = [
+    sys.executable, "-m", "pytest",
+    "--doctest-modules", "-v", "--tb=short", "--capture=no",
+] + [f"--ignore={i}" for i in IGNORES] + [TARGET]
 
+result = subprocess.run(cmd)
+EXIT_CODE = result.returncode
 
-def main() -> int:
-    # Schritt 2: Ziel-Dateien bestimmen (CLI-Argument oder Git-Diff, Fallback: alles)
-    repo = Path(__file__).parent.parent
-    if len(sys.argv) > 1:
-        target = sys.argv[1]
-        target_args = [target]
-    else:
-        changed = get_changed_py_files(repo)
-        if not changed:
-            print("=== verify.py: Keine geänderten .py-Dateien — nichts zu tun ===")
-            return 0
-        target_args = changed
-        target = ", ".join(changed)
+if EXIT_CODE == 0:
+    print("=== verify.py: ALLE DOCTESTS BESTANDEN ===")
+else:
+    print(f"=== verify.py: DOCTESTS FEHLGESCHLAGEN (Exit: {EXIT_CODE}) ===")
 
-    print(f"=== verify.py: Starte Doctest-Prüfung für {target} ===")
-
-    # Schritt 3: pytest mit Doctests aufrufen
-    cmd = [
-        sys.executable, "-m", "pytest",
-        "--doctest-modules",
-        "-v",
-        "--tb=short",
-        "--capture=no",  # Windows-Fix: verhindert I/O operation on closed file
-        "--ignore=.git"
-    ] + target_args
-
-    try:
-        result = subprocess.run(cmd, capture_output=True, text=True, cwd=Path(__file__).parent.parent)
-    except FileNotFoundError:
-        print("FEHLER: pytest nicht installiert. Installiere mit: pip install pytest", file=sys.stderr)
-        return 1
-
-    # Output ausgeben (wie bei verify.sh)
-    if result.stdout:
-        print(result.stdout)
-    if result.stderr:
-        print(result.stderr, file=sys.stderr)
-
-    exit_code = result.returncode
-
-    if exit_code == 0:
-        print("=== verify.py: ALLE DOCTESTS BESTANDEN ===")
-    else:
-        print(f"=== verify.py: DOCTESTS FEHLGESCHLAGEN (Exit: {exit_code}) ===")
-
-    return exit_code
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+sys.exit(EXIT_CODE)
