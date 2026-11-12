@@ -34,3 +34,22 @@ mini_beispiel.py
 remove_duplicates.py
 run_check.py
 tmp_inspect_db.py
+
+# ─── Local virtual environments & caches ─────────────────────────────
+open-webui-venv/
+opencode-data/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ─── Legacy project backups (moved aside, not part of current codebase) ──
+_c-altlasten-backup-*
+Projekte_Altlasten/
+ollama-models/
+
+# ─── Tool config / scratch files (never commit) ──────────────────────
+.obsidian/
+.claude/
+*-test-*.ps1
+*-tsc-raw.txt
+.opencode/run-review.log
