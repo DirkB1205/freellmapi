@@ -2,7 +2,7 @@
 aliases: [home, start]
 tags: [MOC]
 created: 2026-09-15
-updated: 2026-11-10 (Ollama bad-manifest-Fehler-Note ergänzt)
+updated: 2026-11-11 (PowerShell-2147942667-Fehler-Note ergänzt)
 ---
 
 # Second Brain – AI-System 4.0
@@ -51,6 +51,7 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 - [[05_Fehler/FEHLER-2026-11-10_omniroute-eventloop-stall-econnreset|Fehler: OmniRoute Event-Loop-Stall → ECONNRESET bei opencode]]
 - [[05_Fehler/FEHLER-2026-11-10_ollama-bad-manifest-leerzeichen-pfad|Fehler: Ollama bad manifest – Leerzeichen im Modell-Pfad → OmniRoute ohne Ollama]]
 - [[05_Fehler/FEHLER-2026-11-10_watchdog-task-deaktiviert|Fehler: Watchdog deaktiviert + Get-NetTCPConnection kaputt → Selbstheilung tot]]
+- [[05_Fehler/FEHLER-2026-11_11_powershell-2147942667-tempdir|Fehler: PowerShell-Start 2147942667 (0x8007010b) — Startverzeichnis nicht zugreifbar]]
 - [[04_Learnings/|Learnings – Bewährte Lösungen]]
 - [[04_Learnings/CodeGuardianAudit/CodeGuardianAudit-2026-11-08|Code Guardian Audit 2026-11-08 – 22/22 SUCCESS]]
 - [[04_Learnings/LEARNING-2026-11-09_ruflo-Bewertung|Bewertung: ruvnet/ruflo - Agent-Harness (Empfehlung: keine direkte Integration)]]

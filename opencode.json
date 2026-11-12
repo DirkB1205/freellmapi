@@ -60,6 +60,11 @@
   },
   "instructions": [
     "00_Dashboard/Guidelines.md"
+  ],
+  "plugins": [
+    ".opencode/plugins/auto-review.js",
+    ".opencode/plugins/codeguardian/index.ts",
+    ".opencode/plugins/orchestrator.js"
   ]
 }
 
