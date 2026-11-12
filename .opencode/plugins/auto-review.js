@@ -8,7 +8,7 @@ const MAX_RETRIES = 3;
 
 const runVerify = async ($) => {
   try {
-    const out = await $`bash scripts/verify.sh`.text();
+    const out = await $`python scripts/verify.py`.text();
     return { ok: true, stdout: out, exitCode: 0 };
   } catch (e) {
     return { ok: false, stdout: e.stdout || "", stderr: e.stderr || "", exitCode: e.exitCode || 1 };
