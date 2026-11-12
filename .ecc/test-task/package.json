@@ -1,0 +1,10 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"No tests defined\" && exit 0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
