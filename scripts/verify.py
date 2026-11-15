@@ -30,6 +30,7 @@ IGNORES = [
     "02_ECC/skills/continuous-learning-v2/scripts",
     "code/skills/humanizer/scripts/validate-package.py",
     "code/social-media-automation",
+    "code/video-analyse",
     "Projekte/social-automation/auto_setup.py",
     "Projekte/social-automation/Video-Analysen",
     "Projekte/Epic-Tool",
