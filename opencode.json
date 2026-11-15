@@ -12,7 +12,7 @@
       "name": "FreeLLMAPI (local)",
       "options": {
         "baseURL": "http://127.0.0.1:3001/v1",
-        "apiKey": "freellmapi-2d84a560a6594868d65541eb798ef4b063999ddf9eb73bc7"
+        "apiKey": "{env:FREE_LLMAPI_KEY}"
       },
       "models": {
         "auto": {
