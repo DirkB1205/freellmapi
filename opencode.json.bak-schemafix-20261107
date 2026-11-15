@@ -1,0 +1,88 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "freellmapi/auto",
+  "provider": {
+    "freellmapi": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "FreeLLMAPI (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:3001/v1",
+        "apiKey": "{env:FREELLMAPI_API_KEY}"
+      },
+      "models": {
+        "auto": {
+          "name": "FreeLLMAPI Auto Router",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
+        }
+      }
+    },
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "{env:OMNIROUTE_API_KEY}"
+      },
+      "models": {
+        "lm-studio/auto": {
+          "name": "lm-studio/auto (FreeLLMAPI auto via OmniRoute)",
+          "limit": {
+            "context": 65536,
+            "output": 16384
+          }
+        },
+        "main-chain": {
+          "name": "main-chain",
+          "limit": {
+            "context": 65536,
+            "output": 16384
+          }
+        }
+      }
+    }
+  },
+  "tools": {
+    "bash": true,
+    "write": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "webfetch": true,
+    "websearch": true,
+    "skill": true,
+    "question": true,
+    "browser": true,
+    "subagent": true,
+    "lsp": true
+  },
+  "rules": [
+    "Immer auf Deutsch antworten — dies ist die oberste Regel",
+    "Anrede: Boss",
+    "Keine Klartexte für API-Keys, Benutzernamen oder Passwörter in Code, Konfiguration oder Dokumentation",
+    "Secret-Werte müssen über OpenCode Secret Management oder {env:...} Referenzen geladen werden",
+    "Security-Agent prüft vor jedem Import externer Tools/Skills/Agents die neuesten CVEs",
+    "Coding-Guideline-Agent überwacht, dass Code den aktuellen, präzisen und fehlerfreien Guidelines entspricht"
+  ],
+  "instructions": [
+    "00_Dashboard/Guidelines.md"
+  ],
+  "mcp": {
+    "obsidian": {
+      "type": "local",
+      "command": "node",
+      "args": [
+        "E:\\AI-System 3.0\\02_ECC\\scripts\\mcp-obsidian.js"
+      ]
+    }
+  },
+  "telegram": {
+    "bot_token": "{env:TELEGRAM_BOT_TOKEN}",
+    "webhook_url": "{env:TELEGRAM_WEBHOOK_URL}",
+    "username": "@dirkb_bot",
+    "instructions": "08_Workflows/Telegram_Integration.md",
+    "skill": "03_Skills/Telegram_ProcessSkill.md"
+  }
+}

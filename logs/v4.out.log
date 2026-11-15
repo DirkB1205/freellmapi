@@ -1,0 +1,12 @@
+{"ts":"2026-11-12T09:17:39.470Z","v4":true,"msg":"AI-SYSTEM v4 startet | port 8130 | telegram an | routes default,social,agency,design,raum-neu"}
+{"ts":"2026-11-12T09:17:39.488Z","v4":true,"msg":"HTTP bereit auf http://127.0.0.1:8130"}
+{"ts":"2026-11-12T09:18:37.700Z","v4":true,"msg":"Job eingereiht b829d8a1 @default von 8357813809"}
+{"ts":"2026-11-12T09:18:38.304Z","v4":true,"msg":"Job gestartet b829d8a1 @default channel telegram"}
+{"ts":"2026-11-12T09:19:26.627Z","v4":true,"msg":"Job fertig b829d8a1"}
+{"ts":"2026-11-12T18:21:11.331Z","v4":true,"msg":"Job eingereiht e4f30949 @default von 8357813809"}
+{"ts":"2026-11-12T18:21:11.580Z","v4":true,"msg":"Job gestartet e4f30949 @default channel telegram"}
+{"ts":"2026-11-12T18:22:17.694Z","v4":true,"msg":"Job fertig e4f30949"}
+{"ts":"2026-11-12T18:32:29.107Z","v4":true,"msg":"getUpdates-Konflikt 1 Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"}
+{"ts":"2026-11-12T18:32:39.379Z","v4":true,"msg":"getUpdates-Konflikt 2 Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"}
+{"ts":"2026-11-12T18:32:49.614Z","v4":true,"msg":"getUpdates-Konflikt 3 Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"}
+{"ts":"2026-11-12T18:32:49.614Z","v4":true,"msg":"ERROR: Poller gestoppt ÔÇô ein anderer getUpdates-Konsument ist aktiv. Nur EINE Instanz starten!"}

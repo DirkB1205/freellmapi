@@ -1,0 +1,23 @@
+{
+  "task": {
+    "name": "Root System",
+    "description": "Einfache Task-Aufgabe in kleine Stückel für LLM Tasks (maxSteps:500)",
+    "parent": null,
+    "playbookId": "root-task-a"
+  },
+  "pieces": [
+    {"id": "1-split", "content": "Aufgabe auf ca. {{MAX_STEPS}} kleine Splitter zerlegt"},
+    {"id": "2-test", "content": "// Test: LLM mit Playbook-Roller prüfen; Ergebnis zurückgeben"},
+    {"id": "3-playout", "content": "// Playbook-Prompts: AgentReach, Ponytail, OpenStep, etc. einbinden"},
+    {"id": "4-graph", "content": "// Graph.db mit links/sourcen-IDs verknüpfen; E2E-Zustand speichern"}
+  ],
+  "orchestratorConfig": {
+    "maxSteps": 500,
+    "errorTolerance": 3,
+    "playbookId": "root-task-a"
+  },
+  "metadata": {
+    "created": "2026-11-04",
+    "status": "active"
+  }
+}

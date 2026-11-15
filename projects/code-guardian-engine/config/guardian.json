@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "name": "code-guardian-engine",
+  "modes": [
+    "plan",
+    "code-build",
+    "guardian",
+    "audit",
+    "review-delivery"
+  ],
+  "gates": {
+    "destruction": {
+      "enabled": true,
+      "blockCommands": ["rm -rf", "DROP TABLE", "git push --force"]
+    },
+    "secrets": {
+      "enabled": true,
+      "patterns": ["api[_-]?key", "password", "secret", "bearer\\s+[a-zA-Z0-9_\\-\\.]+"]
+    },
+    "migration": {
+      "enabled": true,
+      "requireReversible": true
+    },
+    "deploy": {
+      "enabled": true,
+      "requireTestsPassed": true
+    },
+    "quality": {
+      "enabled": true,
+      "minCoverage": 80
+    },
+    "conformance": {
+      "enabled": true,
+      "language": "de"
+    },
+    "rollback": {
+      "enabled": true,
+      "snapshotOnDeploy": true
+    }
+  },
+  "hooks": 15,
+  "detectors": 22,
+  "skills": 31,
+  "agents": 14
+}

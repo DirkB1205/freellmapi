@@ -1,1 +1,8 @@
 # Auto-Merge Log — AI-System 4.0 Codeguardian Pipeline
+## 2026-11-15T00:00+0100 — AI-System-v4 Poller-409-Backoff
+**Projekt:** ai-system-v4
+**Status:** bestanden (exit 0, skip-branch – keine `.py`-Änderungen)
+**Dateien:** `Projekte/ai-system-v4/index.mjs`
+**Änderung:** Option D implementiert: Exponentielles Back-off auf 409-Conflicts (`Math.min(5000 * 2^(strikes-1), 120000)`), Webhook-Löschung und Poller-Restart nach 5 Strikes. `conflictStrikes` wird bei erfolgreichem Cycle zurückgesetzt; `webhookCleanupIssued`-Guard verhindert Duplikate.
+**Begründung Skip:** `index.mjs` ist JavaScript; `verify.sh` deckt nur Python-Doctests ab. Exit 0 bedeutet: keine Regression in `.py`-Dateien. JS-Fix wurde manuell geprüft (Lines 498–513).
+**Commit:** Nein — Arbeitscopy allein, kein Push.

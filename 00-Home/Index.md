@@ -2,7 +2,7 @@
 aliases: [home, start]
 tags: [MOC]
 created: 2026-09-15
-updated: 2026-11-15 (OpenCode-Disk-Full-Fehler-Note ergänzt)
+updated: 2026-11-15 (PowerShell-Temp-CWD-Fehler vermerkt)
 ---
 
 # Second Brain – AI-System 4.0
@@ -35,6 +35,7 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 ### Fehler
 
 - [ ] FEHLER-2026-11-10_telegram-getupdates-duplikat-poller.md
+- [x] FEHLER-2026-11-15_powershell-0x8007010b-tempdir-cwd.md (Wiederholung, s. 11.11.)
 - [x] FEHLER-2026-11-15_kemgr-dll-fehler.md
 - [ ] FEHLER-2026-11-10_omniroute-eventloop-stall-econnreset.md
 - [ ] FEHLER-2026-11-10_ollama-bad-manifest-leerzeichen-pfad.md

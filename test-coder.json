@@ -1,0 +1,1 @@
+{"model":"codellama:latest","prompt":"function fibonacci(n) {\n  // return nth fibonacci number\n  let a = 0, b = 1;\n  for","options":{"temperature":0,"stop":["}"],"num_predict":40},"stream":false}

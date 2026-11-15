@@ -1,0 +1,273 @@
+2026-11-06 12:05:05  === Start Ollama-Verbesserungslauf ===
+2026-11-06 12:05:05  Pull: qwen3.5:2b
+2026-11-06 12:14:18    -> success [K[?25h[?2026l
+2026-11-06 12:14:18  Pull: qwen3-vl:2b
+2026-11-06 12:14:19    -> success [K[?25h[?2026l
+2026-11-06 12:14:19  Pull: qwen3-coder:30b
+2026-11-06 12:14:20    -> success [K[?25h[?2026l
+2026-11-06 12:14:20  Pull: qwen3.8:27b
+2026-11-06 12:14:21    -> success [K[?25h[?2026l
+2026-11-06 12:14:21  Pull: gemma4:26b
+2026-11-06 12:15:11  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-06 12:15:11  Pull: qwen3.5:2b
+2026-11-06 12:15:12    -> 
+2026-11-06 12:15:12  Pull: qwen3-vl:2b
+2026-11-06 12:15:13    -> 
+2026-11-06 12:15:13  Pull: codellama:latest
+2026-11-06 12:15:14    -> 
+2026-11-06 12:15:14  --- Benchmark (schnelle Modelle) ---
+2026-11-06 12:16:14    qwen3.5:2b : FEHLER The request was canceled due to the configured HttpClient.Timeout of 60 seconds elapsing.
+2026-11-06 12:16:28    qwen3-vl:2b : 14530ms -> OK
+2026-11-06 12:17:12    codellama:latest : 42917ms -> OK
+2026-11-06 12:17:12  Warmhalte schnellstes Modell: qwen3-vl:2b (14530ms)
+2026-11-06 12:18:43    Warmup OK
+2026-11-06 12:18:44  === Ende ===
+2026-11-06 12:18:44  
+2026-11-06 12:18:54  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-06 12:18:54  Pull: qwen3.5:2b
+2026-11-06 12:18:55    -> 
+2026-11-06 12:18:55  Pull: qwen3-vl:2b
+2026-11-06 12:18:56    -> 
+2026-11-06 12:18:56  Pull: codellama:latest
+2026-11-06 12:18:57    -> 
+2026-11-06 12:18:57  --- Warmup (schnelle Modelle) ---
+2026-11-06 12:19:08    qwen3.5:2b warmup OK
+2026-11-06 12:19:26    qwen3-vl:2b warmup OK
+2026-11-06 12:20:35    codellama:latest warmup OK
+2026-11-06 12:20:35  --- Benchmark (schnelle Modelle) ---
+2026-11-06 12:20:48    qwen3.5:2b : 12658ms -> OK
+2026-11-06 12:21:03    qwen3-vl:2b : 15062ms -> OK
+2026-11-06 12:21:15    codellama:latest : 11230ms -> OK
+2026-11-06 12:21:15  Warmhalte schnellstes Modell: codellama:latest (11230ms)
+2026-11-06 12:21:58    Warmup OK
+2026-11-06 12:21:58  === Ende ===
+2026-11-06 12:21:58  
+2026-11-07 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-07 03:00:02  Pull: qwen3.5:2b
+2026-11-07 03:00:03    -> success [K[?25h[?2026l
+2026-11-07 03:00:04  Pull: qwen3-vl:2b
+2026-11-07 03:00:04    -> success [K[?25h[?2026l
+2026-11-07 03:00:04  Pull: codellama:latest
+2026-11-07 03:00:05    -> success [K[?25h[?2026l
+2026-11-07 03:00:05  --- Warmup (schnelle Modelle) ---
+2026-11-07 03:01:02    qwen3.5:2b warmup OK
+2026-11-07 03:02:14    qwen3-vl:2b warmup OK
+2026-11-07 03:03:22    codellama:latest warmup OK
+2026-11-07 03:03:22  --- Benchmark (schnelle Modelle) ---
+2026-11-07 03:04:37    qwen3.5:2b : 74657ms -> Ja
+2026-11-07 03:04:49    qwen3-vl:2b : 12230ms -> OK
+2026-11-07 03:04:57    codellama:latest : 7376ms -> OK
+2026-11-07 03:04:57  Warmhalte schnellstes Modell: codellama:latest (7376ms)
+2026-11-07 03:05:27    Warmup OK
+2026-11-07 03:05:27  === Ende ===
+2026-11-07 03:05:27  
+2026-11-08 02:00:01  === Start Ollama-Verbesserungslauf (Full=True) ===
+2026-11-08 02:00:01  Pull: qwen3.5:2b
+2026-11-08 02:00:02    -> success [K[?25h[?2026l
+2026-11-08 02:00:02  Pull: qwen3-vl:2b
+2026-11-08 02:00:03    -> success [K[?25h[?2026l
+2026-11-08 02:00:03  Pull: codellama:latest
+2026-11-08 02:00:03    -> success [K[?25h[?2026l
+2026-11-08 02:00:03  Pull: qwen3-coder:30b
+2026-11-08 02:00:04    -> success [K[?25h[?2026l
+2026-11-08 02:00:04  Pull: qwen3.8:27b
+2026-11-08 02:00:05    -> success [K[?25h[?2026l
+2026-11-08 02:00:05  Pull: gemma4:26b
+2026-11-08 02:05:05    TIMEOUT nach 300s - abgebrochen
+2026-11-08 02:05:05  Pull: coder-optimized:latest
+2026-11-08 02:05:06    -> Error: pull model manifest: file does not exist
+2026-11-08 02:05:06  Pull: coder-fast:latest
+2026-11-08 02:05:07    -> Error: pull model manifest: file does not exist
+2026-11-08 02:05:07  --- Warmup (schnelle Modelle) ---
+2026-11-08 02:06:13    qwen3.5:2b warmup OK
+2026-11-08 02:07:12    qwen3-vl:2b warmup OK
+2026-11-08 02:08:26    codellama:latest warmup OK
+2026-11-08 02:08:26  --- Benchmark (schnelle Modelle) ---
+2026-11-08 02:09:23    qwen3.5:2b : 57459ms -> OK
+2026-11-08 02:09:35    qwen3-vl:2b : 11730ms -> OK
+2026-11-08 02:09:44    codellama:latest : 9300ms -> OK
+2026-11-08 02:09:44  Warmhalte schnellstes Modell: codellama:latest (9300ms)
+2026-11-08 02:10:26    Warmup OK
+2026-11-08 02:10:26  === Ende ===
+2026-11-08 02:10:26  
+2026-11-08 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-08 03:00:02  Pull: qwen3.5:2b
+2026-11-08 03:00:04    -> success [K[?25h[?2026l
+2026-11-08 03:00:04  Pull: qwen3-vl:2b
+2026-11-08 03:00:04    -> success [K[?25h[?2026l
+2026-11-08 03:00:05  Pull: codellama:latest
+2026-11-08 03:00:06    -> success [K[?25h[?2026l
+2026-11-08 03:00:06  --- Warmup (schnelle Modelle) ---
+2026-11-08 03:01:01    qwen3.5:2b warmup OK
+2026-11-08 03:02:35    qwen3-vl:2b warmup OK
+2026-11-08 03:03:35    codellama:latest warmup OK
+2026-11-08 03:03:35  --- Benchmark (schnelle Modelle) ---
+2026-11-08 03:04:03    qwen3.5:2b : 27871ms -> OK
+2026-11-08 03:04:11    qwen3-vl:2b : 8506ms -> OK
+2026-11-08 03:04:20    codellama:latest : 8738ms -> OK
+2026-11-08 03:04:20  Warmhalte schnellstes Modell: qwen3-vl:2b (8506ms)
+2026-11-08 03:05:21    Warmup OK
+2026-11-08 03:05:21  === Ende ===
+2026-11-08 03:05:21  
+2026-11-09 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-09 03:00:02  Pull: qwen3.5:2b
+2026-11-09 03:00:03    -> success [K[?25h[?2026l
+2026-11-09 03:00:03  Pull: qwen3-vl:2b
+2026-11-09 03:00:04    -> success [K[?25h[?2026l
+2026-11-09 03:00:04  Pull: codellama:latest
+2026-11-09 03:00:05    -> success [K[?25h[?2026l
+2026-11-09 03:00:05  --- Warmup (schnelle Modelle) ---
+2026-11-09 03:00:12    qwen3.5:2b warmup OK
+2026-11-09 03:02:29    qwen3-vl:2b warmup OK
+2026-11-09 03:03:37    codellama:latest warmup OK
+2026-11-09 03:03:37  --- Benchmark (schnelle Modelle) ---
+2026-11-09 03:05:25    qwen3.5:2b : 108250ms -> Ok
+2026-11-09 03:05:35    qwen3-vl:2b : 10024ms -> OK
+2026-11-09 03:05:43    codellama:latest : 7700ms -> OK
+2026-11-09 03:05:43  Warmhalte schnellstes Modell: codellama:latest (7700ms)
+2026-11-09 03:06:14    Warmup OK
+2026-11-09 03:06:14  === Ende ===
+2026-11-09 03:06:14  
+2026-11-10 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-10 03:00:02  Pull: qwen3.5:2b
+2026-11-10 03:00:03    -> success [K[?25h[?2026l
+2026-11-10 03:00:03  Pull: qwen3-vl:2b
+2026-11-10 03:00:04    -> success [K[?25h[?2026l
+2026-11-10 03:00:04  Pull: codellama:latest
+2026-11-10 03:00:04    -> success [K[?25h[?2026l
+2026-11-10 03:00:04  --- Warmup (schnelle Modelle) ---
+2026-11-10 03:00:31    qwen3.5:2b warmup OK
+2026-11-10 03:01:30    qwen3-vl:2b warmup OK
+2026-11-10 03:02:32    codellama:latest warmup OK
+2026-11-10 03:02:32  --- Benchmark (schnelle Modelle) ---
+2026-11-10 03:03:29    qwen3.5:2b : 56217ms -> Ok
+2026-11-10 03:03:38    qwen3-vl:2b : 8840ms -> OK
+2026-11-10 03:03:46    codellama:latest : 8389ms -> OK
+2026-11-10 03:03:46  Warmhalte schnellstes Modell: codellama:latest (8389ms)
+2026-11-10 03:04:13    Warmup OK
+2026-11-10 03:04:13  === Ende ===
+2026-11-10 03:04:13  
+2026-11-11 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-11 03:00:02  Pull: qwen3.5:2b
+2026-11-11 03:00:03    -> success [K[?25h[?2026l
+2026-11-11 03:00:03  Pull: qwen3-vl:2b
+2026-11-11 03:00:04    -> success [K[?25h[?2026l
+2026-11-11 03:00:04  Pull: codellama:latest
+2026-11-11 03:00:04    -> success [K[?25h[?2026l
+2026-11-11 03:00:04  --- Warmup (schnelle Modelle) ---
+2026-11-11 03:00:17    qwen3.5:2b warmup OK
+2026-11-11 03:01:19    qwen3-vl:2b warmup OK
+2026-11-11 03:02:02    codellama:latest warmup OK
+2026-11-11 03:02:02  --- Benchmark (schnelle Modelle) ---
+2026-11-11 03:02:29    qwen3.5:2b : 26512ms -> OK
+2026-11-11 03:02:36    qwen3-vl:2b : 7119ms -> OK
+2026-11-11 03:02:46    codellama:latest : 10361ms -> Gut, ich werde dir helfen, eine Antwort zu finden.  Bitte gebe mir die Frage oder den Text, den du bearbeiten möchtest.
+2026-11-11 03:02:46  Warmhalte schnellstes Modell: qwen3-vl:2b (7119ms)
+2026-11-11 03:03:48    Warmup OK
+2026-11-11 03:03:48  === Ende ===
+2026-11-11 03:03:48  
+2026-11-12 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-12 03:00:02  Pull: qwen3.5:2b
+2026-11-12 03:00:03    -> success [K[?25h[?2026l
+2026-11-12 03:00:03  Pull: qwen3-vl:2b
+2026-11-12 03:00:04    -> success [K[?25h[?2026l
+2026-11-12 03:00:04  Pull: codellama:latest
+2026-11-12 03:00:04    -> success [K[?25h[?2026l
+2026-11-12 03:00:04  --- Warmup (schnelle Modelle) ---
+2026-11-12 03:00:10    qwen3.5:2b warmup OK
+2026-11-12 03:00:53    qwen3-vl:2b warmup OK
+2026-11-12 03:01:57    codellama:latest warmup OK
+2026-11-12 03:01:57  --- Benchmark (schnelle Modelle) ---
+2026-11-12 03:02:38    qwen3.5:2b : 41218ms -> OK
+2026-11-12 03:02:46    qwen3-vl:2b : 7204ms -> OK
+2026-11-12 03:02:51    codellama:latest : 5846ms -> OK
+2026-11-12 03:02:52  Warmhalte schnellstes Modell: codellama:latest (5846ms)
+2026-11-12 03:03:28    Warmup OK
+2026-11-12 03:03:28  === Ende ===
+2026-11-12 03:03:28  
+2026-11-13 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-13 03:00:02  Pull: qwen3.5:2b
+2026-11-13 03:00:03    -> success [K[?25h[?2026l
+2026-11-13 03:00:03  Pull: qwen3-vl:2b
+2026-11-13 03:00:04    -> success [K[?25h[?2026l
+2026-11-13 03:00:04  Pull: codellama:latest
+2026-11-13 03:00:05    -> success [K[?25h[?2026l
+2026-11-13 03:00:05  --- Warmup (schnelle Modelle) ---
+2026-11-13 03:00:11    qwen3.5:2b warmup OK
+2026-11-13 03:00:59    qwen3-vl:2b warmup OK
+2026-11-13 03:02:02    codellama:latest warmup OK
+2026-11-13 03:02:02  --- Benchmark (schnelle Modelle) ---
+2026-11-13 03:02:27    qwen3.5:2b : 25630ms -> OK
+2026-11-13 03:02:36    qwen3-vl:2b : 8946ms -> OK
+2026-11-13 03:02:42    codellama:latest : 5906ms -> OK
+2026-11-13 03:02:42  Warmhalte schnellstes Modell: codellama:latest (5906ms)
+2026-11-13 03:03:15    Warmup OK
+2026-11-13 03:03:15  === Ende ===
+2026-11-13 03:03:15  
+2026-11-14 03:00:03  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-14 03:00:03  Pull: qwen3.5:2b
+2026-11-14 03:00:04    -> success [K[?25h[?2026l
+2026-11-14 03:00:04  Pull: qwen3-vl:2b
+2026-11-14 03:00:04    -> success [K[?25h[?2026l
+2026-11-14 03:00:04  Pull: codellama:latest
+2026-11-14 03:00:05    -> success [K[?25h[?2026l
+2026-11-14 03:00:05  --- Warmup (schnelle Modelle) ---
+2026-11-14 03:00:10    qwen3.5:2b warmup OK
+2026-11-14 03:00:51    qwen3-vl:2b warmup OK
+2026-11-14 03:01:49    codellama:latest warmup OK
+2026-11-14 03:01:49  --- Benchmark (schnelle Modelle) ---
+2026-11-14 03:02:31    qwen3.5:2b : 42210ms -> OK
+2026-11-14 03:02:41    qwen3-vl:2b : 10049ms -> OK
+2026-11-14 03:02:48    codellama:latest : 6287ms -> OK
+2026-11-14 03:02:48  Warmhalte schnellstes Modell: codellama:latest (6287ms)
+2026-11-14 03:03:35    Warmup OK
+2026-11-14 03:03:35  === Ende ===
+2026-11-14 03:03:35  
+2026-11-15 02:00:01  === Start Ollama-Verbesserungslauf (Full=True) ===
+2026-11-15 02:00:01  Pull: qwen3.5:2b
+2026-11-15 02:00:02    -> success [K[?25h[?2026l
+2026-11-15 02:00:02  Pull: qwen3-vl:2b
+2026-11-15 02:00:03    -> success [K[?25h[?2026l
+2026-11-15 02:00:03  Pull: codellama:latest
+2026-11-15 02:00:04    -> success [K[?25h[?2026l
+2026-11-15 02:00:04  Pull: qwen3-coder:30b
+2026-11-15 02:00:04    -> success [K[?25h[?2026l
+2026-11-15 02:00:04  Pull: qwen3.8:27b
+2026-11-15 02:00:05    -> success [K[?25h[?2026l
+2026-11-15 02:00:05  Pull: gemma4:26b
+2026-11-15 02:05:05    TIMEOUT nach 300s - abgebrochen
+2026-11-15 02:05:05  Pull: coder-optimized:latest
+2026-11-15 02:05:06    -> Error: pull model manifest: file does not exist
+2026-11-15 02:05:06  Pull: coder-fast:latest
+2026-11-15 02:05:07    -> Error: pull model manifest: file does not exist
+2026-11-15 02:05:07  --- Warmup (schnelle Modelle) ---
+2026-11-15 02:05:43    qwen3.5:2b warmup OK
+2026-11-15 02:06:24    qwen3-vl:2b warmup OK
+2026-11-15 02:07:38    codellama:latest warmup OK
+2026-11-15 02:07:38  --- Benchmark (schnelle Modelle) ---
+2026-11-15 02:08:23    qwen3.5:2b : 45322ms -> OK
+2026-11-15 02:08:32    qwen3-vl:2b : 9095ms -> OK
+2026-11-15 02:08:40    codellama:latest : 7502ms -> OK
+2026-11-15 02:08:42  Warmhalte schnellstes Modell: codellama:latest (7502ms)
+2026-11-15 02:09:22    Warmup OK
+2026-11-15 02:09:22  === Ende ===
+2026-11-15 02:09:22  
+2026-11-15 03:00:02  === Start Ollama-Verbesserungslauf (Full=False) ===
+2026-11-15 03:00:02  Pull: qwen3.5:2b
+2026-11-15 03:00:03    -> success [K[?25h[?2026l
+2026-11-15 03:00:03  Pull: qwen3-vl:2b
+2026-11-15 03:00:04    -> success [K[?25h[?2026l
+2026-11-15 03:00:04  Pull: codellama:latest
+2026-11-15 03:00:05    -> success [K[?25h[?2026l
+2026-11-15 03:00:05  --- Warmup (schnelle Modelle) ---
+2026-11-15 03:00:26    qwen3.5:2b warmup OK
+2026-11-15 03:01:08    qwen3-vl:2b warmup OK
+2026-11-15 03:02:49    codellama:latest warmup OK
+2026-11-15 03:02:49  --- Benchmark (schnelle Modelle) ---
+2026-11-15 03:03:28    qwen3.5:2b : 39500ms -> OK
+2026-11-15 03:03:39    qwen3-vl:2b : 11071ms -> OK
+2026-11-15 03:03:47    codellama:latest : 7465ms -> OK
+2026-11-15 03:03:47  Warmhalte schnellstes Modell: codellama:latest (7465ms)
+2026-11-15 03:05:07    Warmup OK
+2026-11-15 03:05:07  === Ende ===
+2026-11-15 03:05:07  

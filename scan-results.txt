@@ -1,0 +1,111 @@
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.model_info] No token-limit info for model 'gpt-5.4' ÔÇö using 128000-token default. Add the model to model_registry.yaml.
+WARNING [skillspector.llm_analyzer_base] LLM_REQUEST_FAILURE {"configured_output_cap": 32000, "error_class": "AuthenticationError", "estimated_input_budget": 96000, "estimated_prompt_tokens": 3319, "message_class": "authentication", "ordinal_scope": "analyzer_adapter_invocation", "prompt_bytes": 13292, "prompt_characters": 13276, "provider_code": "invalid_api_key", "request_id": "req_3b0358be02964d8095c50a8d182c34f5", "request_ordinal": 1, "status_code": 401}
+WARNING [skillspector.llm_analyzer_base] LLM batch failed for File: SKILL.md (OpenAIAuthenticationError)
+WARNING [skillspector.llm_analyzer_base] LLM_REQUEST_FAILURE {"configured_output_cap": 32000, "error_class": "AuthenticationError", "estimated_input_budget": 96000, "estimated_prompt_tokens": 4066, "message_class": "authentication", "ordinal_scope": "analyzer_adapter_invocation", "prompt_bytes": 16274, "prompt_characters": 16264, "provider_code": "invalid_api_key", "request_id": "req_138cce0f2276436ab60480df63c6052c", "request_ordinal": 1, "status_code": 401}
+WARNING [skillspector.llm_analyzer_base] LLM batch failed for File: SKILL.md (OpenAIAuthenticationError)
+WARNING [skillspector.llm_analyzer_base] LLM_REQUEST_FAILURE {"configured_output_cap": 32000, "error_class": "AuthenticationError", "estimated_input_budget": 96000, "estimated_prompt_tokens": 3783, "message_class": "authentication", "ordinal_scope": "analyzer_adapter_invocation", "prompt_bytes": 15142, "prompt_characters": 15134, "provider_code": "invalid_api_key", "request_id": "req_3808d200007042769276a68529f653bb", "request_ordinal": 1, "status_code": 401}
+WARNING [skillspector.llm_analyzer_base] LLM batch failed for File: SKILL.md (OpenAIAuthenticationError)
+WARNING [skillspector.nodes.report] LLM stage degraded: semantic runtime telemetry was incomplete; report may reflect static analysis only
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ÔöÉ
+Ôöé SkillSpector Security Report                                                 
+Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ v2.12.0 
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+Skill: accessibility
+Source: E:\AI-System 3.0\02_ECC\skills\accessibility
+Scanned: 2026-11-11 10:22:00 UTC
+
+
+     Risk Assessment     
+ Score           0/100   
+ Severity        LOW     
+ Recommendation  CAUTION 
+
+
+               Components (1)               
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö¼ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö¼ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö¼ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé File     Ôöé Type     Ôöé Lines Ôöé Executable Ôöé
+Ôö£ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö╝ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö╝ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö╝ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöñ
+Ôöé SKILL.md Ôöé markdown Ôöé   175 Ôöé No         Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö┤ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö┤ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔö┤ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ WARNING 
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé Degraded scan                                                                
+Ôöé
+Ôöé LLM analysis was requested but 3 of 3 LLM call(s) failed - affected AI       
+Ôöé
+Ôöé assessments are incomplete; completed results are retained.                  
+Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Ôöÿ
+
+No security issues detected.
+
+
+       Inspection Completeness       
+ Execution             failed        
+ Status                failed        
+ Dependency contents   not_requested 
+ Coverage              0.0%          
+ Fully inspected       0             
+ Partially inspected   1             
+ Entirely uninspected  0             
+Ledger exceptions
+  - llm_batch_failed SKILL.md: LLM analysis failed for this file range.
+  - semantic_runtime_incomplete SKILL.md: Requested semantic analysis did not 
+produce complete per-source runtime telemetry.
+  - reference_missing SKILL.md:18-18: A local path-like reference does not 
+match
+any bundled artifact, such as a file the skill writes at runtime.
+  - reference_missing SKILL.md:20-20: A local path-like reference does not 
+match
+any bundled artifact, such as a file the skill writes at runtime.
+Analyzer statuses
+  - completed artifact_integrity: 
+  - no_applicable_files behavioral_ast: No files matched this analyzer's 
+applicability contract.
+  - no_applicable_files behavioral_taint_tracking: No files matched this 
+analyzer's applicability contract.
+  - no_applicable_files bundled_execution_surface: No files matched this 
+analyzer's applicability contract.
+  - no_applicable_files mcp_least_privilege: No files matched this analyzer's 
+applicability contract.
+  - completed mcp_rug_pull: 
+  - completed mcp_tool_poisoning: 
+  - no_applicable_files meta_analyzer: No files matched this analyzer's 
+applicability contract.
+  - failed semantic_developer_intent: 
+  - failed semantic_quality_policy: 
+  - failed semantic_security_discovery: 
+  - completed static_patterns_agent_snooping: 
+  - completed static_patterns_anti_refusal: 
+  - completed static_patterns_data_exfiltration: 
+  - completed static_patterns_deserialization: 
+  - completed static_patterns_excessive_agency: 
+  - completed static_patterns_harmful_content: 
+  - completed static_patterns_memory_poisoning: 
+  - completed static_patterns_output_handling: 
+  - completed static_patterns_privilege_escalation: 
+  - completed static_patterns_prompt_injection: 
+  - completed static_patterns_rogue_agent: 
+  - completed static_patterns_ssrf: 
+  - completed static_patterns_supply_chain: 
+  - completed static_patterns_system_prompt_leakage: 
+  - completed static_patterns_tool_misuse: 
+  - completed static_yara: 
+Limitations
+  - Analyzer semantic_developer_intent status: failed.
+  - Analyzer semantic_quality_policy status: failed.
+  - Analyzer semantic_security_discovery status: failed.
+Executable scripts: No
+

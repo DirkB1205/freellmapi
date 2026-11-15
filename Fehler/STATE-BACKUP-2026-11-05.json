@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-05T10:30:00",
+  "active_model": "coder-optimized",
+  "context_size": 8192,
+  "predict_limit": 2048,
+  "omniroute_port": 20128,
+  "vram_limit_mb": 6144,
+  "backup_files": [
+    "E:/AI-System 3.0/Modelfile.fast",
+    "E:/AI-System 3.0/remove_duplicates.py"
+  ]
+}

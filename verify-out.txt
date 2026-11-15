@@ -1,0 +1,250 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: E:\AI-System 3.0
+plugins: anyio-4.12.1, asyncio-1.4.0, cov-7.1.0, timeout-2.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+timeout: 30.0s
+timeout method: thread
+timeout func_only: False
+collecting ... whisper 20250625
+collected 160 items
+
+02_ECC/integrations/aura/tests/test_adapter.py::test_verdict_classes[did:aura:trusted-bot-trusted-True] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_verdict_classes[did:aura:caution-bot-caution-True] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_verdict_classes[did:aura:risky-bot-high_risk-False] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_verdict_classes[did:aura:fresh-bot-new-False] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_verdict_classes[did:aura:ghost-bot-unknown-False] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_minimal_dict_contract PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_dimensions_exposed_for_history PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_new_agent_has_no_score PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_allows_trusted PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_allows_caution_by_default PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_rejects_new_by_default PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_rejects_high_risk PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_rejects_unknown_by_default PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_opt_in_allow_can_include_new PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_unreachable_returns_unknown_not_raise PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_fail_closed_on_unreachable PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_gate_fail_open_passes_on_unreachable PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_fail_open_does_not_pass_reachable_unknown PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_fail_open_does_not_pass_malformed_response PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_fail_open_does_not_pass_invalid_response_shape PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_fail_open_does_not_pass_http_error_response PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_reachable_verdict_marked_reachable PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_rejects_bad_did[] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_rejects_bad_did[not-a-did] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_rejects_bad_did[z6Mk-no-prefix] PASSED
+02_ECC/integrations/aura/tests/test_adapter.py::test_rejects_bad_did[None] PASSED
+Projekte/ai-content-studio/hardware_advisor.py::hardware_advisor PASSED
+Projekte/social-automation/test_pipeline.py::TestSocialAutomation::test_adapter_manager_and_mocks PASSED
+code/omni-dashboard/test_smoke.py::test_dashboard_smoke PASSED
+mini_beispiel.py::mini_beispiel.addiere PASSED
+mini_beispiel.py::mini_beispiel.dividieren PASSED
+mini_beispiel.py::mini_beispiel.multipliziere PASSED
+mini_beispiel.py::mini_beispiel.potenz PASSED
+projects/code-guardian-engine/tests/test_engine.py::test_engine [Guardian] Starte Modus: PLAN
+[Plan-Modus] Analysiere Anforderungen und erstelle Architektur-Blueprint...
+[Guardian] Starte Modus: CODE-BUILD
+[Code-Build-Modus] F³hre TDD-Implementierung aus...
+[Guardian] Starte Modus: GUARDIAN
+[Guardian-Modus] Pr³fe Gates (Destruction, Secrets, etc.)...
+[Secret-Gate] Keine Klartext-Geheimnisse gefunden.
+[Guardian] Starte Modus: AUDIT
+[Audit-Modus] F³hre 22 Detektoren und SAST-Pr³fungen aus...
+[Guardian] Starte Modus: REVIEW-DELIVERY
+[Review & Delivery] Validiere Testabdeckung (min. 80%) und bereite Gated Commit vor...
+[TEST PASS] Alle 5 Modi der Code Guardian Engine erfolgreich durchlaufen!
+PASSED
+projects/csv2json/src/csv2json.py::csv2json PASSED
+projects/csv2json/src/csv2json.py::csv2json.convert_with_types PASSED
+projects/csv2json/src/csv2json.py::csv2json.csv_to_json PASSED
+projects/csv2json/src/csv2json.py::csv2json.infer_types PASSED
+usage: json2csv [-h] input output
+json2csv: error: the following arguments are required: input, output
+projects/json2csv/src/json2csv.py::json2csv.main PASSED
+projects/json2csv/src/json2csv.py::json2csv.parse_args PASSED
+projects/json2csv/src/json2csv.py::json2csv.read_json PASSED
+projects/json2csv/src/json2csv.py::json2csv.write_csv PASSED
+scripts/gcra_config.py::scripts.gcra_config PASSED
+scripts/gcra_config.py::scripts.gcra_config.LoopConfig PASSED
+scripts/gcra_config.py::scripts.gcra_config._env PASSED
+scripts/gcra_loop.py::scripts.gcra_loop PASSED
+scripts/gcra_loop.py::scripts.gcra_loop._score_category PASSED
+scripts/gcra_loop.py::scripts.gcra_loop._write_review_note PASSED
+scripts/inbox_parser.py::scripts.inbox_parser.parse_inbox PASSED
+scripts/lib/ecc_dashboard_runtime.py::scripts.lib.ecc_dashboard_runtime.launch_terminal PASSED
+scripts/lib/ecc_dashboard_runtime.py::scripts.lib.ecc_dashboard_runtime.maximize_window PASSED
+scripts/status_reporter.py::scripts.status_reporter.create_review_note PASSED
+scripts/status_reporter.py::scripts.status_reporter.update_inbox_status PASSED
+scripts/task_router.py::scripts.task_router.route_task PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestFindMarkdownCaseInsensitive::test_exact_lowercase_wins_when_both_exist SKIPPED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestFindMarkdownCaseInsensitive::test_merge_script_helper_matches PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestFindMarkdownCaseInsensitive::test_missing_parent_returns_candidate PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestFindMarkdownCaseInsensitive::test_title_case_file_is_found PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestTitleCaseWiki::test_detect_format_sees_title_case_infra PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestTitleCaseWiki::test_links_outside_article_root_stay_unresolved PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestTitleCaseWiki::test_root_prefixed_category_links_resolve PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestTitleCaseWiki::test_title_case_root_infra_is_not_an_article PASSED
+tools/Understand-Anything/tests/skill/knowledge/test_parse_knowledge_base.py::TestLowercaseWikiStillWorks::test_lowercase_layout_parses_with_categories_and_edges PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::WholeFileImportIndexTests::test_indexes_supported_whole_file_types PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::WholeFileImportIndexTests::test_prefers_file_and_rejects_child_or_malformed_nodes PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_c_cpp_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_csharp_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_go_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_helper_in_tests_dir_without_test_extension_is_not_test PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_java_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.ts')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.tsx')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.js')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.jsx')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.mjs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.test.cjs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/Component.test.vue')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.spec.ts')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.spec.tsx')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/foo.spec.js')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions SUBPASSED(path='src/Component.spec.vue')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_js_ts_sibling_test_extensions PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_kotlin_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_php_test_files SUBPASSED(path='src/UserTest.php')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_php_test_files SUBPASSED(path='tests/Feature/User.php')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_php_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/foo.ts')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/foo.tsx')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='internal/bar.go')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/index.tsx')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='README.md')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='docs/guide.md')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='main.py')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/foo/bar.js')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='Foo.cs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='Bar.kt')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='Bar.java')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='Sources/App/Contest.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/contest.rs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='lib/latest.rb')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected SUBPASSED(path='src/Contest.php')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_production_files_rejected PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_python_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_ruby_test_files SUBPASSED(path='test/user_test.rb')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_ruby_test_files SUBPASSED(path='spec/user_spec.rb')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_ruby_test_files SUBPASSED(path='spec/spec_helper.rb')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_ruby_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_rust_test_files SUBPASSED(path='src/parser_test.rs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_rust_test_files SUBPASSED(path='tests/parser.rs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_rust_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_scala_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files SUBPASSED(path='Sources/App/AppTests.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files SUBPASSED(path='Sources/App/AppTest.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files SUBPASSED(path='Sources/App/AppSpec.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files SUBPASSED(path='Tests/AppTests/AppTests.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files SUBPASSED(path='Tests/AppTests/TestSupport.swift')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_swift_test_files PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_tests_directory_with_test_extension PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::IsTestPathTests::test_underscore_test_dir_with_test_extension PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_csharp_dotnet_sibling_project_mirror PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_csharp_tests_subdir_mirror_to_src PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_go_sibling PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_java_it_suffix PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_java_maven_layout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_java_tests_suffix PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_js_ts_sibling PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_js_ts_spec_sibling PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_js_ts_test_subdir_walkout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_kotlin_maven_layout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_mirrored_tests_tree PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_priority_mirrored_tree_sibling_before_mirror PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_priority_underscore_tests_sibling_before_walkup PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_python_in_package_tests_walkout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_python_test_prefix PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_python_test_suffix PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_scala_multimodule_sbt_layout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_scala_sbt_layout PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::ProductionCandidatesTests::test_underscore_tests_dir PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_basic_pairing_emits_forward_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_canonical_llm_edge_kept_unchanged PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_direction_always_forward_production_to_test PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_does_not_duplicate_existing_tag PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_does_not_match_test_to_test PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_drops_duplicate_canonical_edges PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_drops_orphan_endpoint_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_drops_test_to_test_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_dup_keeps_higher_weight_canonical PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_dup_lighter_inverted_dropped_no_swap_counted PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_dup_replaces_with_heavier_inverted PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_dup_swapped_then_canonical_heavier_clears_swapped_count PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_dup_two_inverted_keeps_heavier_swapped_once PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_empty_input PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_first_matching_candidate_wins PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_idempotent PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_inverted_llm_edge_is_swapped_not_stripped PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed SUBPASSED(bad_tags=None)
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed SUBPASSED(bad_tags='tested,foo')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed SUBPASSED(bad_tags='single')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed SUBPASSED(bad_tags=0)
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed SUBPASSED(bad_tags={'k': 'v'})
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_malformed_tags_is_replaced_not_crashed PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_no_production_counterpart_no_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_node_without_filepath_falls_back_to_id PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_other_missing_language_patterns_preserve_canonical_edges SUBPASSED(test_path='tests/parser.rs')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_other_missing_language_patterns_preserve_canonical_edges SUBPASSED(test_path='spec/user_spec.rb')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_other_missing_language_patterns_preserve_canonical_edges SUBPASSED(test_path='tests/Feature/User.php')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_other_missing_language_patterns_preserve_canonical_edges PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_scala_multimodule_sbt_pairing_emits_forward_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_scala_sbt_pairing_emits_forward_edge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_supplement_skips_pair_already_covered_by_llm PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_swap_recovers_real_world_one_test_many_production PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_swift_canonical_llm_edge_is_preserved PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_swift_inverted_llm_edge_is_swapped_and_tagged PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::LinkTestsTests::test_unrelated_edges_pass_through PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::MergeIntegrationTests::test_linker_runs_during_merge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::MergeIntegrationTests::test_swift_canonical_edge_survives_full_merge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_aliases_are_mapped PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_case_is_normalized PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_missing_defaults_to_forward PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_unknown_values_fall_back_to_forward PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_valid_values_pass_through SUBPASSED(value='forward')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_valid_values_pass_through SUBPASSED(value='backward')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_valid_values_pass_through SUBPASSED(value='bidirectional')
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::NormalizeDirectionTests::test_valid_values_pass_through PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::MergeEdgeDirectionTests::test_alias_is_canonicalized_before_dedup PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::MergeEdgeDirectionTests::test_missing_direction_is_persisted_as_forward PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_malformed_part_is_skipped_with_warning PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_missing_part_emits_warning PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_mixed_single_and_multi_part PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_stderr_report_format PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_three_parts_of_one_logical_batch_merge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestMultiPart::test_two_parts_of_one_logical_batch_merge PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestIncrementalBatchExisting::test_batch_existing_baseline_is_loaded_before_fresh_batches PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUnrecognizedBatchFilename::test_fused_filename_emits_stderr_warning PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUnrecognizedBatchFilename::test_fused_filename_surfaces_in_report PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUnrecognizedBatchFilename::test_range_filename_also_unrecognized PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUnrecognizedBatchFilename::test_recognized_batches_still_loaded PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestEmptyBatchGuard::test_empty_batch_warns_but_does_not_fail PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestEmptyBatchGuard::test_no_warning_when_all_batches_contribute PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUaDirResolution::test_fresh_project_uses_dot_ua PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUaDirResolution::test_legacy_dir_wins_when_both_present PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestUaDirResolution::test_legacy_project_keeps_understand_anything PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_batch_graphs.py::TestIncrementalEdgeCandidates::test_preserves_only_current_normalized_dangling_edges PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestStructuralEdgeDrops::test_non_structural_drop_stays_in_could_not_fix PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestStructuralEdgeDrops::test_structural_drop_emits_warning_and_is_recorded PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestStructuralEdgeDrops::test_valid_edges_are_untouched PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestCrossRunRecovery::test_dropped_structural_edge_recovers_when_endpoint_arrives PASSED
+Warning: could not read merge-report.json: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestCrossRunRecovery::test_missing_or_corrupt_report_yields_no_pending PASSED
+tools/Understand-Anything/tests/skill/understand/test_merge_subdomain_graphs.py::TestCrossRunRecovery::test_non_structural_dropped_edges_are_not_retried PASSED
+
+============================== warnings summary ===============================
+C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\numba\__init__.py:48
+  C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\numba\__init__.py:48: UserWarning: A NumPy version >=1.23.5 and <2.5.0 is required for this version of SciPy (detected version 2.5.4)
+    import scipy
+
+C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\cacheprovider.py:469
+  C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\cacheprovider.py:469: PytestCacheWarning: cache could not write path E:\AI-System 3.0\.pytest_cache\v\cache\nodeids: [Errno 13] Permission denied: 'E:\\AI-System 3.0\\.pytest_cache\\v\\cache\\nodeids'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======= 159 passed, 1 skipped, 2 warnings, 49 subtests passed in 24.03s =======
+=== verify.py: Starte Doctest-Pr³fung f³r . (Timeout: 120s) ===
+=== verify.py: ALLE DOCTESTS BESTANDEN ===

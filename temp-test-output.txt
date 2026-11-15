@@ -1,0 +1,117 @@
+
+> @freellmapi/server@0.2.1 test
+> vitest run --pool=forks --fileParallelism=false provider-minute-cap.test.ts --reporter=verbose
+
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mE:/AI-System 3.0/server[39m
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mships a default cap for nvidia and none for a provider without one
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > ships a default cap for nvidia and none for a provider without one
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mapplies the APINex 5 RPM cap across different free models, per key
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > applies the APINex 5 RPM cap across different free models, per key
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mhonours an env override and treats 0 as disabled
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > honours an env override and treats 0 as disabled
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2msums usage across every model on the same account+key
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > sums usage across every model on the same account+key
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mblocks once the shared budget is spent, even for an untouched model
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > blocks once the shared budget is spent, even for an untouched model
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mships a default cap for nvidia and none for a provider without one[32m 39[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mapplies the APINex 5 RPM cap across different free models, per key[32m 19[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mhonours an env override and treats 0 as disabled[32m 19[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22msums usage across every model on the same account+key[32m 21[2mms[22m[39m
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mallows again once the minute window rolls past
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > allows again once the minute window rolls past
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mdoes not gate a provider with no configured cap
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > does not gate a provider with no configured cap
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+
+[90mstdout[2m | src/__tests__/services/provider-minute-cap.test.ts[2m > [22m[2mprovider-wide per-minute request cap[2m > [22m[2mkeeps separate budgets per key on the same platform
+stderr | src/__tests__/services/provider-minute-cap.test.ts > provider-wide per-minute request cap > keeps separate budgets per key on the same platform
+[crypto] No ENCRYPTION_KEY set ÔÇö generated an in-memory dev key. Set ENCRYPTION_KEY for production.
+[22m[39mDatabase initialized at :memory:
+Seeded 25 models and fallback config
+
+  A unified API key was generated. Open the dashboard and retrieve it from the Keys page.
+  The key is intentionally not printed to logs.
+
+Created Default profile
+
+
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mblocks once the shared budget is spent, even for an untouched model[32m 18[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mallows again once the minute window rolls past[32m 18[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mdoes not gate a provider with no configured cap[32m 18[2mms[22m[39m
+ [32mÔ£ô[39m src/__tests__/services/provider-minute-cap.test.ts[2m > [22mprovider-wide per-minute request cap[2m > [22mkeeps separate budgets per key on the same platform[32m 18[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m   Start at [22m 23:09:54
+[2m   Duration [22m 849ms[2m (transform 264ms, setup 0ms, collect 451ms, tests 171ms, environment 0ms, prepare 71ms)[22m
+

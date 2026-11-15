@@ -1,0 +1,233 @@
+=== verify.py: Starte Doctest-Pr³fung f³r -vv ===
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: E:\AI-System 3.0
+plugins: anyio-4.12.1, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... Sheets: ['Start', 'Projekt', 'LV', 'Raumliste', 'Aufma├ƒ 1', 'Aufma├ƒ 2', 'Daten', '1 Pos Menge+Kosten', '2 Pos Mehr+Minder', '3 Pos Rechnungslegung', '4 Pos Mengenkontrolle', '5 Pos Einzelma├ƒe', '6 Kostengruppen', '7 Aufma├ƒe+Positionen', '8 R├ñume+Positionen', '9 R├ñume kompakt', '10 Pos+Bl├ñtter', '11 Pos+R├ñume+Bl├ñtter', '12 Positionsnachweis']
+Count: 19
+LV row2: [None, None, None, None, None]
+Aufma├ƒ 1 headers: ['Position', 'Kurzbezeichnung', 'Ma├ƒeinheit', 'Raumbezeichnung', 'Bl.', 'Menge', 'Einzelpreis', 'Gesamtpreis']
+Aufma├ƒ 1 row5: [None, '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,2,FALSE),""))', '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,4,FALSE),""))', None, 1, None, '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,5,FALSE),""))', '=IF(OR($A5="",$F5=""),"",$F5*$G5)']
+Daten headers: ['Position', 'Kurzbezeichnung', 'ME', 'Raum', 'Blatt', 'Menge', 'Einzelpreis', 'Gesamtpreis', 'Aufma├ƒ', 'Kostengruppe', None]
+Daten row2: ['=IF(\'Aufma├ƒ 1\'!$A$5:$A$5="","",\'Aufma├ƒ 1\'!$A$5:$A$5)', '=IF(\'Aufma├ƒ 1\'!$B$5:$B$5="","",\'Aufma├ƒ 1\'!$B$5:$B$5)', '=IF(\'Aufma├ƒ 1\'!$C$5:$C$5="","",\'Aufma├ƒ 1\'!$C$5:$C$5)', '=IF(\'Aufma├ƒ 1\'!$D$5:$D$5="","",\'Aufma├ƒ 1\'!$D$5:$D$5)', '=IF(\'Aufma├ƒ 1\'!$E$5:$E$5="","",\'Aufma├ƒ 1\'!$E$5:$E$5)', '=IF(\'Aufma├ƒ 1\'!$A$5:$A$5="","",IFERROR(\'Aufma├ƒ 1\'!$F$5:$F$5,0))', '=IF(\'Aufma├ƒ 1\'!$G$5:$G$5="","",\'Aufma├ƒ 1\'!$G$5:$G$5)', '=IF(\'Aufma├ƒ 1\'!$H$5:$H$5="","",\'Aufma├ƒ 1\'!$H$5:$H$5)', 'Aufma├ƒ 1', '=IF($A2="","",IFERROR(VLOOKUP($A2,LV!$A$2:$H$501,8,FALSE),""))', None]
+Daten row3: ['=IF(\'Aufma├ƒ 1\'!$A$6:$A$6="","",\'Aufma├ƒ 1\'!$A$6:$A$6)', '=IF(\'Aufma├ƒ 1\'!$B$6:$B$6="","",\'Aufma├ƒ 1\'!$B$6:$B$6)', '=IF(\'Aufma├ƒ 1\'!$C$6:$C$6="","",\'Aufma├ƒ 1\'!$C$6:$C$6)', '=IF(\'Aufma├ƒ 1\'!$D$6:$D$6="","",\'Aufma├ƒ 1\'!$D$6:$D$6)', '=IF(\'Aufma├ƒ 1\'!$E$6:$E$6="","",\'Aufma├ƒ 1\'!$E$6:$E$6)', '=IF(\'Aufma├ƒ 1\'!$A$6:$A$6="","",IFERROR(\'Aufma├ƒ 1\'!$F$6:$F$6,0))', '=IF(\'Aufma├ƒ 1\'!$G$6:$G$6="","",\'Aufma├ƒ 1\'!$G$6:$G$6)', '=IF(\'Aufma├ƒ 1\'!$H$6:$H$6="","",\'Aufma├ƒ 1\'!$H$6:$H$6)', 'Aufma├ƒ 1', '=IF($A3="","",IFERROR(VLOOKUP($A3,LV!$A$2:$H$501,8,FALSE),""))', None]
+--- 1 Pos Menge+Kosten headers: ['1 Pos Menge+Kosten', None, None, None, None, None, None, None, None]
+F2: None
+G2: None
+H2: None
+--- 6 Kostengruppen headers: ['6 Kostengruppen', None, None, None, None, None, None]
+B2: None
+OK
+=== 1 Pos Menge+Kosten (max_row=5) ===
+Row 1: ['1 Pos Menge+Kosten', None, None, None, None, None, None, None]
+Row 2: ['Mengen- und Kostenkontrolle je LV-Position', None, None, None, None, None, None, None]
+Row 3: [None, None, None, None, None, None, None, None]
+Row 4: ['Position', 'Kurzbezeichnung', 'ME', 'Aufma├ƒmenge', 'Einzelpreis', 'Aufma├ƒkosten', 'LV-Menge', 'LV-Kosten']
+Row 5: ['Summe', None, None, '=SUM(D5:D4)', None, '=SUM(F5:F4)', '=SUM(G5:G4)', '=SUM(H5:H4)']
+=== 6 Kostengruppen (max_row=5) ===
+Row 1: ['6 Kostengruppen', None, None, None, None, None]
+Row 2: ['Kostengruppenkontrolle', None, None, None, None, None]
+Row 3: [None, None, None, None, None, None]
+Row 4: ['Kostengruppe', 'Positionen', 'Aufma├ƒmenge', 'Aufma├ƒkosten', 'LV-Kosten', 'Differenz']
+Row 5: ['Summe', None, '=SUM(C5:C4)', '=SUM(D5:D4)', '=SUM(E5:E4)', '=SUM(F5:F4)']
+=== 12 Positionsnachweis (max_row=5) ===
+Row 1: ['12 Positionsnachweis', None, None, None, None, None, None, None]
+Row 2: ['Positionsnachweis: Verwendung der Positionen', None, None, None, None, None, None, None]
+Row 3: [None, None, None, None, None, None, None, None]
+Row 4: ['Position', 'Kurzbezeichnung', 'ME', 'Aufma├ƒzeilen', 'R├ñume', 'Bl├ñtter', 'Menge', 'Status']
+Row 5: ['Summe', None, None, '=SUM(D5:D4)', None, None, '=SUM(G5:G4)', None]
+OK
+['Dict', 'ET', 'GAEBExporter', 'GAEBImporter', 'GAEB_XML_NS', 'Iterable', 'List', 'Optional', 'Path', 'annotations', 'datetime', 'detect_format', 'export_da11', 'export_gaeb', 'export_x31', 'format_oz', 'import_d83', 'import_da11', 'import_gaeb', 'import_x31', 're', 'split_oz', 'textwrap']
+import_d83 (source) -> 'List[Dict]'
+import_da11 (source) -> 'List[Dict]'
+import_gaeb (source) -> 'List[Dict]'
+import_x31 (source) -> 'List[Dict]'
+export_da11 (rows: 'Iterable[Dict]', output=None) -> 'bytes'
+export_gaeb (rows: 'Iterable[Dict]', output=None, fmt: 'str' = 'x31') -> 'bytes'
+export_x31 (rows: 'Iterable[Dict]', output=None) -> 'bytes'
+detect_format (source) -> 'str'
+Sheets: ['Start', 'Projekt', 'LV', 'Raumliste', 'Aufma├ƒ 1', 'Daten', '1 Pos Menge+Kosten', '2 Pos Mehr+Minder', '3 Pos Rechnungslegung', '4 Pos Mengenkontrolle', '5 Pos Einzelma├ƒe', '6 Kostengruppen', '7 Aufma├ƒe+Positionen', '8 R├ñume+Positionen', '9 R├ñume kompakt', '10 Pos+Bl├ñtter', '11 Pos+R├ñume+Bl├ñtter', '12 Positionsnachweis']
+Count: 18
+LV row2: ['1.01.01.0001', 'Anpassungs-/Verdrahtungsarbeiten Z├ñhleranlage an die neue Nutzung', 1, 'psch', None]
+LV row3: ['1.01.01.0002', 'Koordination mit dem VNB (Anpassung Z├ñhleranlage, Baustrom usw.)', 1, 'psch', None]
+LV max_row: 502
+Aufma├ƒ 1 headers: ['Position', 'Kurzbezeichnung', 'Ma├ƒeinheit', 'Raumbezeichnung', 'Bl.', 'Menge', 'Einzelpreis', 'Gesamtpreis']
+Aufma├ƒ 1 row5: [None, '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,2,FALSE),""))', '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,4,FALSE),""))', None, 1, None, '=IF(OR($A5="",COUNTIF(LV!$A:$A,$A5)=0),"",IFERROR(VLOOKUP($A5,LV!$A:$F,5,FALSE),""))', '=IF(OR($A5="",$F5=""),"",$F5*$G5)']
+Aufma├ƒ 1 max_row: 508
+Daten max_row: 501
+Daten row2: ['=IF(\'Aufma├ƒ 1\'!$A$5:$A$5="","",\'Aufma├ƒ 1\'!$A$5:$A$5)', '=IF(\'Aufma├ƒ 1\'!$B$5:$B$5="","",\'Aufma├ƒ 1\'!$B$5:$B$5)', '=IF(\'Aufma├ƒ 1\'!$C$5:$C$5="","",\'Aufma├ƒ 1\'!$C$5:$C$5)', '=IF(\'Aufma├ƒ 1\'!$D$5:$D$5="","",\'Aufma├ƒ 1\'!$D$5:$D$5)', '=IF(\'Aufma├ƒ 1\'!$E$5:$E$5="","",\'Aufma├ƒ 1\'!$E$5:$E$5)', '=IF(\'Aufma├ƒ 1\'!$A$5:$A$5="","",IFERROR(\'Aufma├ƒ 1\'!$F$5:$F$5,0))', '=IF(\'Aufma├ƒ 1\'!$G$5:$G$5="","",\'Aufma├ƒ 1\'!$G$5:$G$5)', '=IF(\'Aufma├ƒ 1\'!$H$5:$H$5="","",\'Aufma├ƒ 1\'!$H$5:$H$5)', 'Aufma├ƒ 1', '=IF($A2="","",IFERROR(VLOOKUP($A2,LV!$A$2:$H$501,8,FALSE),""))', None]
+Daten row3: ['=IF(\'Aufma├ƒ 1\'!$A$6:$A$6="","",\'Aufma├ƒ 1\'!$A$6:$A$6)', '=IF(\'Aufma├ƒ 1\'!$B$6:$B$6="","",\'Aufma├ƒ 1\'!$B$6:$B$6)', '=IF(\'Aufma├ƒ 1\'!$C$6:$C$6="","",\'Aufma├ƒ 1\'!$C$6:$C$6)', '=IF(\'Aufma├ƒ 1\'!$D$6:$D$6="","",\'Aufma├ƒ 1\'!$D$6:$D$6)', '=IF(\'Aufma├ƒ 1\'!$E$6:$E$6="","",\'Aufma├ƒ 1\'!$E$6:$E$6)', '=IF(\'Aufma├ƒ 1\'!$A$6:$A$6="","",IFERROR(\'Aufma├ƒ 1\'!$F$6:$F$6,0))', '=IF(\'Aufma├ƒ 1\'!$G$6:$G$6="","",\'Aufma├ƒ 1\'!$G$6:$G$6)', '=IF(\'Aufma├ƒ 1\'!$H$6:$H$6="","",\'Aufma├ƒ 1\'!$H$6:$H$6)', 'Aufma├ƒ 1', '=IF($A3="","",IFERROR(VLOOKUP($A3,LV!$A$2:$H$501,8,FALSE),""))', None]
+--- 1 Pos Menge+Kosten max_row: 313
+Row 4: ['Position', 'Kurzbezeichnung', 'ME', 'Aufma├ƒmenge', 'Einzelpreis', 'Aufma├ƒkosten', 'LV-Menge', 'LV-Kosten']
+Row 5: ['=LV!A2', '=LV!B2', '=LV!D2', "=SUMIFS('Daten'!$F$2:$F$501,'Daten'!$A$2:$A$501,$A5)", '=IFERROR(LV!E2,0)', '=D5*E5', '=IFERROR(LV!C2,0)', '=IFERROR(LV!F2,0)']
+Row 6: ['=LV!A3', '=LV!B3', '=LV!D3', "=SUMIFS('Daten'!$F$2:$F$501,'Daten'!$A$2:$A$501,$A6)", '=IFERROR(LV!E3,0)', '=D6*E6', '=IFERROR(LV!C3,0)', '=IFERROR(LV!F3,0)']
+OK
+Path cleanup complete. Modified 0 source files.
+Upgraded Global Protocols in 2470 files.
+Ô£à CHANGELOG.md and RELEASE-NOTES.md updated successfully.
+Analysiere: E:\AI-System 3.0\Projekte\Server\data\media\inbox\tg_1794173610925_688.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_Server_data_media_inbox_tg_1794173610925_688.md
+Analysiere: E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\_smoketest.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_Youtube_youtube-shorts-generator_media_output__smoketest.md
+Analysiere: E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\short.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_Youtube_youtube-shorts-generator_media_output_short.md
+Analysiere: E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\test_short.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_Youtube_youtube-shorts-generator_media_output_test_short.md
+Analysiere: E:\AI-System 3.0\Projekte\social-automation\assets\context_short.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_social-automation_assets_context_short.md
+Analysiere: E:\AI-System 3.0\Projekte\social-automation\context_short.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_social-automation_context_short.md
+Analysiere: E:\AI-System 3.0\Projekte\social-automation\generated_posts\context_short.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\Projekte_social-automation_generated_posts_context_short.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_config_certs_audio_min.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min_out.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_config_certs_audio_min_out.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\content\video\audio.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_output_content_video_audio.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_output_smoke_video_audio.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio_c2pa.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_output_smoke_video_audio_c2pa.md
+Analysiere: E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\tts\flower_test.mp4
+  -> E:\AI-System 3.0\Projekte\social-automation\Video-Analysen\_c-altlasten-backup-20261008_Default-Project-kopien_social-media-automation_output_tts_flower_test.md
+
+Fertig: 13 Dossiers + INDEX.md
+COUNT: 25
+DUPLICATES:
+  ffbaf58f1231: audio.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\content\video\audio.mp4), audio.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\content\video\audio.mp4)
+  90d71e7d87be: audio.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio.mp4), audio.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio.mp4)
+  4cfed14c6e86: audio_c2pa.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio_c2pa.mp4), audio_c2pa.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\smoke\video\audio_c2pa.mp4)
+  58a9e3b1dda2: audio_min.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min.mp4), audio_min.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min.mp4)
+  ec03921e65dc: audio_min_out.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min_out.mp4), audio_min_out.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\config\certs\audio_min_out.mp4)
+  fb4f15a15ca2: flower_test.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\tts\flower_test.mp4), flower_test.mp4 (E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\social-media-automation\output\tts\flower_test.mp4)
+  0173064e2cd8: context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\assets\context_short.mp4), context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\assets\context_short.mp4)
+  a0533ba14d8e: context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\context_short.mp4), context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\generated_posts\context_short.mp4), context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\context_short.mp4), context_short.mp4 (E:\AI-System 3.0\Projekte\social-automation\generated_posts\context_short.mp4)
+  ad31bba0e571: short.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\short.mp4), short.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\short.mp4)
+  c835cf4082ad: _smoketest.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\_smoketest.mp4), _smoketest.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\_smoketest.mp4)
+  ca9621e870cf: test_short.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\test_short.mp4), test_short.mp4 (E:\AI-System 3.0\Projekte\Youtube\youtube-shorts-generator\media\output\test_short.mp4)
+NO_SHA: []
+NO_PFAD: []
+SAVED: C:\Users\DirkBieler\AppData\Local\Temp\opencode\index_rows2.json
+INDEX.md geschrieben: 52 Zeilen, 24 Rows, 11 Duplikat-Gruppen
+Ô£à Social-Automation Pipeline ist vollst├ñndig einsatzbereit und getestet.
+Ô£¿ Beitrag erstellt: E:/AI-System 3.0/Projekte/social-automation/generated_posts/post_001.json
+Ô£¿ Beitrag erstellt: E:/AI-System 3.0/Projekte/social-automation/generated_posts/post_002.json
+collected 793 items / 335 errors / 6 skipped
+INTERNALERROR> Traceback (most recent call last):
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 330, in wrap_session
+INTERNALERROR>     session.exitstatus = doit(config, session) or 0
+INTERNALERROR>                          ^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 383, in _main
+INTERNALERROR>     config.hook.pytest_collection(session=session)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+INTERNALERROR>     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 167, in _multicall
+INTERNALERROR>     raise exception
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+INTERNALERROR>     teardown.throw(exception)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\logging.py", line 803, in pytest_collection
+INTERNALERROR>     return (yield)
+INTERNALERROR>             ^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+INTERNALERROR>     teardown.throw(exception)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\warnings.py", line 99, in pytest_collection
+INTERNALERROR>     return (yield)
+INTERNALERROR>             ^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+INTERNALERROR>     teardown.throw(exception)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\config\__init__.py", line 1445, in pytest_collection
+INTERNALERROR>     return (yield)
+INTERNALERROR>             ^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 394, in pytest_collection
+INTERNALERROR>     session.perform_collect()
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 869, in perform_collect
+INTERNALERROR>     self.items.extend(self.genitems(node))
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 1035, in genitems
+INTERNALERROR>     yield from self.genitems(subnode)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 1035, in genitems
+INTERNALERROR>     yield from self.genitems(subnode)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 1035, in genitems
+INTERNALERROR>     yield from self.genitems(subnode)
+INTERNALERROR>   [Previous line repeated 3 more times]
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 1032, in genitems
+INTERNALERROR>     rep, duplicate = self._collect_one_node(node, handle_dupes)
+INTERNALERROR>                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 895, in _collect_one_node
+INTERNALERROR>     rep = collect_one_node(node)
+INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 589, in collect_one_node
+INTERNALERROR>     rep: CollectReport = ihook.pytest_make_collect_report(collector=collector)
+INTERNALERROR>                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+INTERNALERROR>     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 167, in _multicall
+INTERNALERROR>     raise exception
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+INTERNALERROR>     teardown.throw(exception)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 1798, in pytest_make_collect_report
+INTERNALERROR>     result = yield
+INTERNALERROR>              ^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+INTERNALERROR>     teardown.throw(exception)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\capture.py", line 880, in pytest_make_collect_report
+INTERNALERROR>     rep = yield
+INTERNALERROR>           ^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 408, in pytest_make_collect_report
+INTERNALERROR>     call = CallInfo.from_call(
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 361, in from_call
+INTERNALERROR>     result: TResult | None = func()
+INTERNALERROR>                              ^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 406, in collect
+INTERNALERROR>     return list(collector.collect())
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\doctest.py", line 548, in collect
+INTERNALERROR>     module = self.obj
+INTERNALERROR>              ^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py", line 290, in obj
+INTERNALERROR>     self._obj = obj = self._getobj()
+INTERNALERROR>                       ^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py", line 561, in _getobj
+INTERNALERROR>     return importtestmodule(self.path, self.config)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py", line 508, in importtestmodule
+INTERNALERROR>     mod = import_path(
+INTERNALERROR>           ^^^^^^^^^^^^
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\pathlib.py", line 596, in import_path
+INTERNALERROR>     importlib.import_module(module_name)
+INTERNALERROR>   File "C:\Users\DirkBieler\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+INTERNALERROR>     return _bootstrap._gcd_import(name[level:], package, level)
+INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+INTERNALERROR>   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+INTERNALERROR>   File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+INTERNALERROR>   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+INTERNALERROR>   File "E:\AI-System 3.0\_c-altlasten-backup-20261008\Default-Project-kopien\skills\humanizer\scripts\validate-package.py", line 72, in <module>
+INTERNALERROR>     raise SystemExit(f"Number SKILL.md patterns from 1 upward without gaps: {pattern_numbers}")
+INTERNALERROR> SystemExit: Number SKILL.md patterns from 1 upward without gaps: [1, 2, 3, 4, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+
+============ 6 skipped, 4 warnings, 335 errors in 76.85s (0:01:16) ============
+mainloop: caught unexpected SystemExit!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0000022f8cae1600] moov atom not found
+
+
+=== verify.py: DOCTESTS FEHLGESCHLAGEN (Exit: 3) ===

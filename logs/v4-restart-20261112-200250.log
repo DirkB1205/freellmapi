@@ -1,0 +1,32 @@
+{"ts":"2026-11-12T19:02:50.527Z","v4":true,"msg":"AI-SYSTEM v4 startet | port 8130 | telegram an | routes default,social,agency,design,raum-neu"}
+{"ts":"2026-11-12T19:02:50.563Z","v4":true,"msg":"HTTP bereit auf http://127.0.0.1:8130"}
+{"ts":"2026-11-12T19:02:50.694Z","v4":true,"msg":"Job eingereiht 0cf8dacf @default von 8357813809"}
+{"ts":"2026-11-12T19:02:50.714Z","v4":true,"msg":"Job eingereiht 66626388 @default von 8357813809"}
+{"ts":"2026-11-12T19:02:51.359Z","v4":true,"msg":"Job gestartet 0cf8dacf @default channel telegram"}
+{"ts":"2026-11-12T19:03:36.806Z","v4":true,"msg":"Job fertig 0cf8dacf"}
+{"ts":"2026-11-12T19:03:37.381Z","v4":true,"msg":"Job gestartet 66626388 @default channel telegram"}
+{"ts":"2026-11-12T19:03:48.546Z","v4":true,"msg":"Job fertig 66626388"}
+{"ts":"2026-11-12T20:29:32.158Z","v4":true,"msg":"Job eingereiht 0964c57d @default von 8357813809"}
+{"ts":"2026-11-12T20:29:32.770Z","v4":true,"msg":"Job gestartet 0964c57d @default channel telegram"}
+{"ts":"2026-11-12T20:30:13.058Z","v4":true,"msg":"Job fertig 0964c57d"}
+{"ts":"2026-11-12T20:35:00.546Z","v4":true,"msg":"Job eingereiht 00948c89 @default von 8357813809"}
+{"ts":"2026-11-12T20:35:00.551Z","v4":true,"msg":"Job gestartet 00948c89 @default channel telegram"}
+{"ts":"2026-11-12T20:35:49.016Z","v4":true,"msg":"Job fertig 00948c89"}
+{"ts":"2026-11-12T20:36:47.648Z","v4":true,"msg":"Job eingereiht 52031004 @default von 8357813809"}
+{"ts":"2026-11-12T20:36:48.036Z","v4":true,"msg":"Job gestartet 52031004 @default channel telegram"}
+{"ts":"2026-11-12T20:37:25.890Z","v4":true,"msg":"Job fertig 52031004"}
+{"ts":"2026-11-12T20:40:13.740Z","v4":true,"msg":"Job eingereiht 4fbaeeb8 @default von 8357813809"}
+{"ts":"2026-11-12T20:40:13.862Z","v4":true,"msg":"Job gestartet 4fbaeeb8 @default channel telegram"}
+{"ts":"2026-11-12T20:40:26.384Z","v4":true,"msg":"Job fertig 4fbaeeb8"}
+{"ts":"2026-11-12T20:43:30.410Z","v4":true,"msg":"Job eingereiht b45ea690 @default von 8357813809"}
+{"ts":"2026-11-12T20:43:30.703Z","v4":true,"msg":"Job gestartet b45ea690 @default channel telegram"}
+{"ts":"2026-11-12T20:44:25.682Z","v4":true,"msg":"Job fertig b45ea690"}
+{"ts":"2026-11-12T20:45:47.477Z","v4":true,"msg":"Job eingereiht e30f56a9 @default von 8357813809"}
+{"ts":"2026-11-12T20:45:48.151Z","v4":true,"msg":"Job gestartet e30f56a9 @default channel telegram"}
+{"ts":"2026-11-12T20:46:31.723Z","v4":true,"msg":"Job fertig e30f56a9"}
+{"ts":"2026-11-12T20:46:38.741Z","v4":true,"msg":"Job eingereiht 76dcabc2 @default von 8357813809"}
+{"ts":"2026-11-12T20:46:39.167Z","v4":true,"msg":"Job gestartet 76dcabc2 @default channel telegram"}
+{"ts":"2026-11-12T20:46:51.200Z","v4":true,"msg":"Job fertig 76dcabc2"}
+{"ts":"2026-11-12T20:55:07.773Z","v4":true,"msg":"Job eingereiht cece3f6c @default von 8357813809"}
+{"ts":"2026-11-12T20:55:08.077Z","v4":true,"msg":"Job gestartet cece3f6c @default channel telegram"}
+{"ts":"2026-11-12T20:55:19.551Z","v4":true,"msg":"Job fertig cece3f6c"}
