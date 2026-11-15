@@ -2,8 +2,8 @@
 tags: [Fehler]
 created: 2026-11-11 09:12
 bereich: OmniRoute / Infrastruktur
-updated: 2026-11-11
-status: behoben (transient), Root Cause: auto→klein-kontext-413
+updated: 2026-11-15
+status: gelöst
 ---
 
 # FEHLER-2026-11-11: OmniRoute 413 context_too_large via omniroute/auto (Wiederholung)
@@ -26,6 +26,7 @@ status: behoben (transient), Root Cause: auto→klein-kontext-413
 - 413 context_too_large ist **kein** Server-Crash, sondern Upstream-Context-Limit.
 - Auto-Router kann transient auf kleine-Context-Candidates (32k) zurückfallen — auch wenn großer Context verfügbar wäre.
 - Boss-Entscheid: lieber großkontextiges lokales Modell (`qwen3.5:2b`, 262k) als Auto mit kleinen Candidates.
+- **2026-11-15:** OpenCode deckelte `ollama-local/qwen3.5:2b` global auf **32k** (`C:\Users\DirkBieler\.config\opencode\opencode.json` Zeile 89), obwohl Ollama 262k (`context_length: 262144`) bereitstellt. Der 32k-Deckel war der eigentliche 413-Auslöser bei großen Chats. OpenCode-Config auf 262k korrigiert.
 
 ## Offene Baustelle
-- Bereits geöffnete, übergroße Chats einmal neu starten (Boss-Anweisung).
+- Keine. 32k-Deckel in globaler Config korrigiert (2026-11-15).
