@@ -1,18 +1,23 @@
 # AGENTS.md — Projektregeln für AI-System 4.0 Codeguardian-Pipeline
 
 ## Grundsatz
-**Jeder Code-Schreib-Prozess läuft zwingend über: Write → Verify → Review.**
-Keine Ausnahme. Kein Commit ohne Review-Note im Vault.
+**AI-System 4.0 ist ein eigenständiger autonomer Workflow.**
+- **Normalfall (Doctest Exit 0)**: Auto-Merge, Review-Note nur zur Dokumentation.
+- **Fehlerfall (Doctest Exit ≠ 0)**: Reviewer analysiert → Rat entscheidet.
+- **Kein Commit ohne Dokumentation** (Auto-Merge-Log oder Review-Note im Vault).
+
+Siehe auch: `08_Workflows/AI_System_4.0_Autonomer_Workflow.md`, `06_Entscheidungen/ADR-2026-11-15_AI-System-4.0-Autonomie-Level.md`.
 
 ## Ablauf (automatisch via Plugin)
 
 1. **Builder-Agent** schreibt Code (oder du schreibst manuell).
-2. **Session idle** → Plugin triggert `scripts/verify.sh`.
-3. **verify.sh** läuft pytest Doctests → Exit-Code bestimmt Pfad:
-   - **Exit 0**: Reviewer-Agent prüft Schritt-Kommentare & Doctest-Abdeckung → schreibt Obsidian-Note (`status: bestanden`).
-   - **Exit ≠ 0**: Reviewer-Agent analysiert Fehler → schreibt Obsidian-Note (`status: fehlgeschlagen`, `abweichungen` befüllt).
+2. **Session idle** → Plugin triggert `scripts/verify.py`.
+3. **verify.py** läuft pytest Doctests → Exit-Code bestimmt Pfad:
+   - **Exit 0**: Auto-Merge → Logeintrag in `codeguardian/auto-merges.log`, Review-Note optional (nur Dokumentation).
+   - **Exit ≠ 0**: Reviewer-Agent analysiert Fehler → schreibt Obsidian-Note (`status: fehlgeschlagen`, `abweichungen` befüllt) → **Rat entscheidet** (Security + Coding-Guideline + OmniRoute-Health).
 4. **Note** landet in `codeguardian/` mit YAML-Frontmatter + Dataview-kompatiblen Feldern.
 5. **Dashboard** (`Code-Prüfungen Übersicht.md`) zeigt alle Prüfungen, Status, offene Abweichungen.
+6. **Rat-Entscheidungen** werden in `codeguardian/rat-decisions/` dokumentiert.
 
 ## Agent-Rollen
 
@@ -75,6 +80,22 @@ Zeigt: Tabelle aller Prüfungen, Filter nach Status/Projekt, offene Abweichungen
 git commit --no-verify -m "HOTFIX: <grund> — REVIEW SKIPPED, NACHPRÜFUNG ERFORDERLICH"
 ```
 Danach **sofort** manuelle Review-Note erstellen.
+
+## Rat-Entscheidung (bei Fehler/Ausfall)
+
+**Zusammensetzung**: Security-Agent + Coding-Guideline-Agent + OmniRoute-Health-Agent
+
+**Analyse**:
+- Fehlerursache (Root-Cause)
+- Risikobewertung (Security, Stabilität, Datenverlust)
+- Handlungsoptionen mit Vor-/Nachteilen
+
+**Entscheidung**:
+- a) Fortsetzung mit Modifikation
+- b) Rollback zum letzten funktionierenden Stand
+- c) Manueller Override durch Boss (Dokumentationspflicht in OMNI-INBOX.md)
+
+**Dokumentation**: Jede Rat-Entscheidung wird in `codeguardian/rat-decisions/` als Markdown-Note mit YAML-Frontmatter abgelegt.
 
 ## Einstieg für neue Chats
 

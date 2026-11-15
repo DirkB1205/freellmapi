@@ -1,6 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "freellmapi/auto",
+  "agent": {
+    "compaction": {
+      "model": "omniroute/ollama-local/qwen3-coder:30b"
+    }
+  },
   "provider": {
     "freellmapi": {
       "npm": "@ai-sdk/openai-compatible",
