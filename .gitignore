@@ -42,7 +42,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# ─── Legacy project backups (moved aside, not part of current codebase) ──
+# ─── Embedded git repos (submodules that must NOT recurse) ─────────────
+02_ECC/
 _c-altlasten-backup-*
 Projekte_Altlasten/
 ollama-models/
@@ -53,3 +54,22 @@ ollama-models/
 *-test-*.ps1
 *-tsc-raw.txt
 .opencode/run-review.log
+
+# ─── Scratch / Probe / ad-hoc files (root & code/) ─────────────────────
+_probe-*.js
+_scan-*.js
+*_list.csv
+*_meta.csv
+check*.js
+check*.ps1
+calendar.json
+Modelfile.*
+eradication_*.log
+core_*
+db_dump*
+
+# ─── Runtime / cache dirs ──────────────────────────────────────────────
+.pytest_cache/
+.temp/
+.dspy_cache/
+.aider.tags.cache.v4

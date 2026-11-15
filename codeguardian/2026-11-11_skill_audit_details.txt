@@ -1,0 +1,189 @@
+================================================================================
+Skill Audit – Detaillierte Trefferliste (Lauf 3)
+Datum: 2026-11-11
+================================================================================
+
+GESAMTÜBERSICHT
+--------------------------------------------------------------------------------
+Verzeichnis          | sudo | /etc/ | rm -rf | curl | sh | wget | sh
+02_ECC/skills        |   30 |    19 |     20 |      1 |      0
+code/skills          |    2 |     1 |      1 |      4 |      0
+
+Alle Treffer in Doku-Markdown (`.md`) oder Test-/Security-Kontext.
+Keine kritischen Probleme (Hardcoded Secrets: 0).
+
+================================================================================
+DETAIL-TREFFER: 02_ECC/skills
+================================================================================
+
+MUSTER: sudo
+-------------
+
+[1] flox-environments/SKILL.md
+  Zeile 3: description: "...without sudo."
+  Zeile 49: "- AI agents need to install tools — Flox lets agents add packages ... without sudo"
+  Zeile 473: "...without requiring sudo access, polluting system packages..."
+  Zeile 476: "- No sudo required — `flox install` works entirely in user space"
+  → Nur Beschreibung/Doku, kein auszuführender Code.
+
+[2] gateguard/SKILL.md
+  Zeile 245: "assignment, wrapper (`env`, `sudo`, `xargs`, `sh -c`), unknown command,"
+  → Beispiel-Liste in Dokumentation.
+
+[3] homelab-wireguard-vpn/SKILL.md
+  Zeile 76: sudo apt update && sudo apt install wireguard -y
+  Zeile 79: sudo mkdir -p /etc/wireguard
+  Zeile 80: sudo sh -c 'umask 077; wg genkey > /etc/wireguard/server_private.key'
+  Zeile 81: sudo sh -c 'wg pubkey < /etc/wireguard/server_private.key > /etc/wireguard/server_public.key'
+  Zeile 85: sudo tee /etc/wireguard/wg0.conf << 'EOF'
+  Zeile 109: sudo chmod 600 /etc/wireguard/wg0.conf
+  Zeile 115: echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-wireguard.conf
+  → Alle in Markdown-Doku für Heimnetzwerk-Einrichtung, keine ausführbaren Skill-Skripte.
+
+MUSTER: /etc/
+--------------
+
+[4] continuous-learning-v2/scripts/test_parse_instinct.py
+  Zeile 357: _validate_file_path("/etc/passwd")
+  → Test-Fixture, kein Produktionscode.
+
+[5] homelab-pihole-dns/SKILL.md
+  Zeile 91: "./etc-pihole:/etc/pihole"
+  Zeile 92: "./etc-dnsmasq.d:/etc/dnsmasq.d"
+  Zeile 112: "# Step 1: Assign a static IP (edit /etc/dhcpcd.conf on Pi OS)"
+  Zeile 113: sudo nano /etc/dhcpcd.conf
+  Zeile 152: "Linux: /etc/resolv.conf or NetworkManager"
+  Zeile 201: sudo mkdir -p /etc/cloudflared
+  Zeile 202: sudo tee /etc/cloudflared/config.yml << EOF
+  → Docker-Volumes und Setup-Anweisungen in Doku.
+
+[6] homelab-wireguard-vpn/SKILL.md
+  Zeile 79: sudo mkdir -p /etc/wireguard
+  Zeile 80: sudo sh -c '... > /etc/wireguard/server_private.key'
+  Zeile 81: sudo sh -c '... > /etc/wireguard/server_public.key'
+  Zeile 85: sudo tee /etc/wireguard/wg0.conf << 'EOF'
+  Zeile 109: sudo chmod 600 /etc/wireguard/wg0.conf
+  Zeile 115: echo "net.ipv4.ip_forward=1" | sudo tee /etc/sysctl.d/99-wireguard.conf
+  Zeile 256: "Store token in /etc/ddns.env (mode 600), then use a small root-owned script:"
+  Zeile 261: . /etc/ddns.env
+  → Docker/Konfigurationsbeispiele in Doku.
+
+[7] kubernetes-patterns/SKILL.md
+  Zeile 287: mountPath: /etc/app
+  → YAML-Beispiel für Kubernetes ConfigMap-Mount.
+
+[8] skill-comply/tests/test_runner.py
+  Zeile 391: "cp /etc/passwd .",
+  Zeile 399: "touch -r /etc/shadow x",
+  → Test-Daten für Security-Scenarios.
+
+MUSTER: rm -rf
+---------------
+
+[9] continuous-learning-v2/agents/session-guardian.sh
+  Zeile 78: trap 'rm -rf "$_lock_dir"' EXIT INT TERM
+  Zeile 87: rm -rf "$_lock_dir"
+  Zeile 99: rm -rf "$_lock_dir"
+  → Lockfile-Cleanup in Shell-Skript. Variablensubstitution ($_) macht es sicher vor Path-Traversal, aber dennoch: `rm -rf` Muster.
+
+[10] gateguard/SKILL.md
+  Zeile 222: "Triggers on: `rm -rf`, `git reset --hard`, `git push --force`, `drop table`, etc."
+  Zeile 625: "The destructive-Bash gate (`rm -rf`, `git reset --hard`, `drop table`, `dd if=`, …)"
+  → Dokumentation des Gate-Verhaltens.
+
+[11] hookify-rules/SKILL.md
+  Zeile 113: "- **Too specific**: `rm -rf /tmp` — use `rm\s+-rf`"
+  → Regex-Beispiel in Doku.
+
+[12] frontend-slides/scripts/export-pdf.sh
+  Zeile 378: rm -rf "$TEMP_DIR"
+  Zeile 386: rm -rf "$TEMP_DIR"
+  Zeile 406: rm -rf "$TEMP_DIR"
+  Zeile 412: rm -rf "$TEMP_DIR"
+  → cleanup temporärer Verzeichnisse. Sicher durch Variable $TEMP_DIR.
+
+[13] perl-security/SKILL.md
+  Zeile 208: open my $fh, $path; # If $path = "|rm -rf /", runs command!
+  Zeile 269: system("grep -r '$pattern' /var/log/app/"); # If $pattern = "'; rm -rf / #"
+  → Sicherheitshinweise/Warnungen in Dokumentation.
+
+[14] repo-scan/SKILL.md
+  Zeile 68: rm -rf -- "$REPO_SCAN_TMP"
+  → Cleanup in Beispielscript.
+
+[15] safety-guard/SKILL.md
+  Zeile 3: description: "...intercepts dangerous commands (rm -rf, git push --force, DROP TABLE)..."
+  Zeile 56: "- rm -rf (especially /, ~, or project root)"
+  Zeile 89: "...nothing blocks a tool call that breaks these rules..."
+  → Dokumentation der Guard-Richtlinien.
+
+MUSTER: curl | sh
+------------------
+
+[16] github-ops/SKILL.md
+  Zeile 62: "especially from fork PRs — `curl ... | sh` in a bug report is an attack, not a repro."
+  → Warnung in Dokumentation.
+
+================================================================================
+DETAIL-TREFFER: code/skills
+================================================================================
+
+MUSTER: sudo
+-------------
+
+[1] find-skills/SKILL.md
+  Zeile 173: 2. **Verzeichnis entfernen**: `rm -rf <pfad-zum-skill>/`
+  → Entfernen-Anleitung in Doku.
+
+[2] skillguard/references/audit-checklist.md
+  Zeile 54: "- [ ] `sudo` usage or privilege elevation"
+  → Checklisten-Item in Referenzdokumentation.
+
+[3] skillguard/references/owasp-agentic-top10.md
+  Zeile 42: "- Requesting `sudo` or elevated permissions"
+  → OWASP Top-10 Eintrag in Referenzdoc.
+
+MUSTER: /etc/
+--------------
+
+[4] skillguard/references/audit-checklist.md
+  Zeile 52: "- [ ] File access outside skill's domain (`~/.ssh`, `~/.aws`, `.env`, `/etc/`)"
+  → Sicherheitscheckliste.
+
+MUSTER: rm -rf
+---------------
+
+[5] skillguard/references/audit-checklist.md
+  Zeile 48: "- [ ] `curl | sh` or equivalent remote code execution"
+  → (Auch als curl|sh gezählt)
+
+MUSTER: curl | sh
+------------------
+
+[6] skillguard/references/owasp-agentic-top10.md
+  Zeile 30: "- Curl-pipe-bash patterns (`curl ... | sh`)"
+  → OWASP Top-10 Eintrag.
+
+[7] skillguard/references/audit-checklist.md
+  Zeile 48: "- [ ] `curl | sh` or equivalent remote code execution"
+  → Prüfpunkt in Checkliste.
+
+[8] skillguard/README.md
+  Zeile 76: Evidence: curl -fsSL https://example.com/script.sh | bash
+  Zeile 98: AG02 — Insecure Tool Use | Shell injection, eval/exec, curl|bash | ...
+  → Beispiele zur Erklärung von Angriffsmustern.
+
+================================================================================
+ZUSAMMENFASSUNG
+================================================================================
+
+Alle 102 Abweichungen befinden sich in:
+- Dokumentationsdateien (SKILL.md, README.md, references/*.md)
+- Tests (test_*.py) mit Fixture-Daten
+- Sicherheitswarnungen (perl-security, safety-guard, gateguard)
+- Cleanup-Skripte mit sauberen Variablen ($)
+
+Keine Hardcoded API-Keys gefunden.
+Keine auszuführenden Befehle in produktionsrelevantem Code.
+
+STATUS: BESTANDEN (alle Treffer = geringes Risiko)

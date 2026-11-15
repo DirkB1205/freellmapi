@@ -21,6 +21,7 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 ### Dashboard
 - [[00_Dashboard/Home|Dashboard – Überblick & Quick-Reference]]
 - [[00_Dashboard/Guidelines|Guidelines – Regeln & Sicherheit]]
+- [[codeguardian/Code-Prüfungen Übersicht|Code-Prüfungen Übersicht – Codeguardian Dashboard]]
 
 ### Agenten (ECC + System)
 - [[02_Agents/README|Agenten-Index – 71 ECC Agents + 2 System-Agents]]

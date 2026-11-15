@@ -1,0 +1,2 @@
+- [x] Client-side JS für Video-Preview-Modal implementieren (Modal UI, approve/discard handlers, script loading)
+- [x] E2E-Test: Modal funktioniert, Script wird geladen, Approve/Discard Buttons aktiv (keine CRASH bei empty platforms)
