@@ -9,5 +9,10 @@
       "Bash(rm -rf client/.git)",
       "Bash(git add *)"
     ]
+  },
+  "projects": {
+    "E:/AI-System 3.0": {
+      "hasTrustDialogAccepted": true
+    }
   }
 }
