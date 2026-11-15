@@ -2,7 +2,7 @@
 aliases: [home, start]
 tags: [MOC]
 created: 2026-09-15
-updated: 2026-11-11 (PowerShell-2147942667-Fehler-Note ergänzt)
+updated: 2026-11-15 (OpenCode-Disk-Full-Fehler-Note ergänzt)
 ---
 
 # Second Brain – AI-System 4.0
@@ -35,6 +35,7 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 ### Fehler
 
 - [ ] FEHLER-2026-11-10_telegram-getupdates-duplikat-poller.md
+- [x] FEHLER-2026-11-15_kemgr-dll-fehler.md
 - [ ] FEHLER-2026-11-10_omniroute-eventloop-stall-econnreset.md
 - [ ] FEHLER-2026-11-10_ollama-bad-manifest-leerzeichen-pfad.md
 - [ ] FEHLER-2026-11-10_watchdog-task-deaktiviert.md
@@ -100,6 +101,4 @@ Mein persönliches Wissens-Archiv für OpenCode, Fehler, Learnings, Projekte, Ag
 
 ## Letztes Update
 
-2026-11-08 — Orchestrator-Daemon: Provider-Health-Check, Retry/Fallback, Eskalations-Logik und Vault-Persistenz implementiert. `py_compile` Smoke-Test erfolgreich. Projekt-Note `Projekte/ORCHESTRATOR-DAEMON.md` angelegt.
-
-2026-11-10 — Telegram-/status Feature abgeschlossen; Telegram-409-Doppelpoller behoben (Messenger-Bridge gestoppt, AI-System v4 alleiniger Poller); Fehler-Note `05_Fehler/FEHLER-2026-11-10_telegram-getupdates-duplikat-poller.md` angelegt.
+2026-11-15 — kemgr.dll-Fehler notiert: Popup bei `rundll`-Aufruf mit nicht-standard Windows-DLL. Details in `05_Fehler/kemgr-dll-fehler.md`.
